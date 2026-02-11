@@ -1,0 +1,117 @@
+---
+---
+<header class="fixed top-0 left-0 right-0 bg-navy text-white z-30 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex flex-col leading-tight">
+      <span class="text-lg font-bold tracking-wide"><span class="text-gold italic">JS</span> TILE & GROUT</span>
+      <span class="text-gold text-xs tracking-widest uppercase">Cleaning Services</span>
+    </a>
+
+    <!-- Phone (hidden on mobile) -->
+    <div class="hidden md:flex flex-col items-center">
+      <a href="tel:5619138786" class="text-lg font-bold hover:text-gold transition-colors">(561) 913-8786</a>
+      <span class="text-gold text-xs uppercase tracking-wider">Se Habla Español</span>
+    </div>
+
+    <!-- Desktop Nav (hidden on mobile) -->
+    <nav class="hidden lg:flex items-center gap-6">
+      <a href="/" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">Home</a>
+      <a href="/aboutUs" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">About Us</a>
+      <a href="/services" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">Services</a>
+      <a href="/#gallery" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">Gallery</a>
+      <a href="/contact" class="bg-maroon text-white px-5 py-2 text-sm font-bold uppercase tracking-wider hover:bg-red-900 transition-colors">Contact Us</a>
+    </nav>
+
+    <!-- Hamburger Button (mobile only) -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <span class="block w-6 h-0.5 bg-white"></span>
+      <span class="block w-6 h-0.5 bg-white"></span>
+      <span class="block w-6 h-0.5 bg-white"></span>
+    </button>
+  </div>
+
+</header>
+
+<!-- Drawer Overlay -->
+<div
+  id="drawer-overlay"
+  class="lg:hidden fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300"
+></div>
+
+<!-- Drawer Panel -->
+<nav
+  id="drawer-panel"
+  class="lg:hidden fixed top-0 left-0 h-full w-72 bg-navy-dark z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+>
+  <!-- Drawer Header -->
+  <div class="flex items-center justify-between px-5 py-4 border-b border-gray-700">
+    <a href="/" class="flex flex-col leading-tight">
+      <span class="text-lg font-bold tracking-wide text-white"><span class="text-gold italic">JS</span> TILE & GROUT</span>
+      <span class="text-gold text-xs tracking-widest uppercase">Cleaning Services</span>
+    </a>
+    <button id="drawer-close" class="text-white p-2" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Phone & Español -->
+  <div class="px-5 py-4 text-center">
+    <a href="tel:5619138786" class="block text-lg font-bold text-white hover:text-gold transition-colors">(561) 913-8786</a>
+    <span class="text-gold text-xs uppercase tracking-wider">Se Habla Español</span>
+  </div>
+
+  <hr class="border-gray-700 mx-5" />
+
+  <!-- Nav Links -->
+  <div class="flex flex-col px-5 py-4 gap-1">
+    <a href="/" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Home</a>
+    <a href="/aboutUs" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">About Us</a>
+    <a href="/services" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Services</a>
+    <a href="/#gallery" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Gallery</a>
+    <a href="/contact" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Contact</a>
+  </div>
+
+  <!-- Contact Button -->
+  <div class="mt-auto px-5 py-6">
+    <a href="/contact" class="drawer-link block bg-maroon text-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-center hover:bg-red-900 transition-colors">Contact Us</a>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const overlay = document.getElementById('drawer-overlay');
+  const panel = document.getElementById('drawer-panel');
+  const closeBtn = document.getElementById('drawer-close');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  function openDrawer() {
+    overlay?.classList.remove('opacity-0', 'pointer-events-none');
+    overlay?.classList.add('opacity-100', 'pointer-events-auto');
+    panel?.classList.remove('-translate-x-full');
+    panel?.classList.add('translate-x-0');
+    document.body.classList.add('overflow-hidden');
+    toggle?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrawer() {
+    overlay?.classList.add('opacity-0', 'pointer-events-none');
+    overlay?.classList.remove('opacity-100', 'pointer-events-auto');
+    panel?.classList.add('-translate-x-full');
+    panel?.classList.remove('translate-x-0');
+    document.body.classList.remove('overflow-hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle?.addEventListener('click', openDrawer);
+  overlay?.addEventListener('click', closeDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+</script>

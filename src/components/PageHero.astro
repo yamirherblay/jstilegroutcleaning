@@ -1,0 +1,39 @@
+---
+interface Props {
+  badge: string;
+  heading: string;
+  subtitle: string;
+  image?: string;
+}
+
+const { badge, heading, subtitle, image } = Astro.props;
+---
+<section class="relative bg-navy-dark overflow-hidden">
+  <!-- Background overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-gray-800 opacity-90"></div>
+  <!-- Decorative top bar -->
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gold"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 py-12 md:py-16 text-center">
+    <!-- Badge -->
+    <div class="mb-6">
+      <span class="free-estimate-badge inline-block bg-gold text-white text-sm font-bold uppercase tracking-wider px-4 py-2">
+        {badge}
+      </span>
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="font-heading text-3xl md:text-5xl font-bold italic leading-tight mb-4 text-white">
+      {heading}
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto" set:html={subtitle} />
+  </div>
+</section>
+
+<style>
+  .free-estimate-badge {
+    transform: skewX(-5deg);
+  }
+</style>
