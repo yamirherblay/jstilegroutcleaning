@@ -1,70 +1,77 @@
 ---
 ---
-<section class="relative bg-navy-dark overflow-hidden">
+<section class="relative grid-wrapper overflow-hidden hero-section">
   <!-- Background overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-gray-800 opacity-90"></div>
+  <div class="absolute inset-0 opacity-90"></div>
   <!-- Decorative top bar -->
-  <div class="absolute top-0 left-0 right-0 h-1 bg-gold"></div>
+  <div class="absolute top-0 left-0 right-0 h-1 bg-brown"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 py-12 md:py-20 lg:py-24">
-    <!-- Free Estimate Badge -->
-    <div class="mb-6">
-      <span class="free-estimate-badge inline-block bg-gold text-white text-sm font-bold uppercase tracking-wider px-4 py-2">
-        Free Estimate
-      </span>
-    </div>
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <!-- Left: Content -->
+      <div class="flex-1 z-10">
+        <!-- Free Estimate Badge -->
+        <div class="mb-6">
+            <a href="/contact">
+          <span class="free-estimate-badge inline-block bg-orange text-white text-sm font-bold uppercase tracking-wider px-4 py-2">
+            Free Estimate
+          </span>
+            </a>
+        </div>
 
-    <!-- Main Heading -->
-    <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold italic leading-tight mb-6">
-      <span class="text-white">Professional</span><br />
-      <span class="text-maroon">Tile & Grout</span><br />
-      <span class="text-white">Restoration</span>
-    </h1>
+        <!-- Main Heading -->
+        <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold italic leading-tight mb-6">
+          <span class="text-gray-700">Professional</span><br />
+          <span class="text-orange">Tile & Grout</span><br />
+          <span class="text-gray-700">Restoration</span>
+        </h1>
 
-    <!-- Subtitle with red border -->
-    <div class="flex flex-wrap items-center gap-3 mb-6 text-sm md:text-base">
-      <div class="flex items-center gap-3">
-        <span class="block w-1 h-6 bg-maroon"></span>
-        <span class="text-white font-bold uppercase tracking-wider">Residential & Commercial</span>
+        <!-- Subtitle with accent border -->
+        <div class="flex flex-wrap items-center gap-3 mb-6 text-sm md:text-base">
+          <div class="flex items-center gap-3">
+            <span class="block w-1 h-6 bg-brown"></span>
+            <span class="text-brown font-bold uppercase tracking-wider">Residential & Commercial</span>
+          </div>
+          <span class="hidden md:inline text-gray-500">|</span>
+          <span class="text-orange font-bold uppercase tracking-wider">We speak Spanish</span>
+        </div>
+
+        <!-- Service List -->
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-8 max-w-md">
+          <li class="flex items-center gap-2 text-[#2B2B2B] text-sm">
+            <span class="w-2 h-2 rounded-full bg-blue-accent flex-shrink-0"></span>
+            Tile & Grout Cleaning
+          </li>
+          <li class="flex items-center gap-2 text-[#2B2B2B] text-sm">
+            <span class="w-2 h-2 rounded-full bg-blue-accent flex-shrink-0"></span>
+            Sealing & Stripping
+          </li>
+          <li class="flex items-center gap-2 text-[#2B2B2B] text-sm">
+            <span class="w-2 h-2 rounded-full bg-blue-accent flex-shrink-0"></span>
+            Marble Restoration
+          </li>
+          <li class="flex items-center gap-2 text-[#2B2B2B] text-sm">
+            <span class="w-2 h-2 rounded-full bg-blue-accent flex-shrink-0"></span>
+            Shower Repairs
+          </li>
+        </ul>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="tel:5619138786"
+            class="bg-orange rounded-2xl text-white px-8 py-3 font-bold uppercase tracking-wider text-center hover:bg-orange-dark transition-colors text-sm md:text-base"
+          >
+            Call (561) 913-8786
+          </a>
+          <a
+            href="#gallery"
+            class="rounded-2xl border-brown text-brown px-8 py-3 font-bold uppercase tracking-wider text-center hover:bg-brown hover:text-white transition-colors text-sm md:text-base"
+          >
+            Our Gallery
+          </a>
+        </div>
       </div>
-      <span class="hidden md:inline text-gray-500">|</span>
-      <span class="text-maroon font-bold uppercase tracking-wider">Se Habla Español</span>
-    </div>
-
-    <!-- Service List -->
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-8 max-w-md">
-      <li class="flex items-center gap-2 text-white text-sm">
-        <span class="w-2 h-2 rounded-full bg-gold flex-shrink-0"></span>
-        Tile & Grout Cleaning
-      </li>
-      <li class="flex items-center gap-2 text-white text-sm">
-        <span class="w-2 h-2 rounded-full bg-gold flex-shrink-0"></span>
-        Sealing & Stripping
-      </li>
-      <li class="flex items-center gap-2 text-white text-sm">
-        <span class="w-2 h-2 rounded-full bg-gold flex-shrink-0"></span>
-        Marble Restoration
-      </li>
-      <li class="flex items-center gap-2 text-white text-sm">
-        <span class="w-2 h-2 rounded-full bg-gold flex-shrink-0"></span>
-        Shower Repairs
-      </li>
-    </ul>
-
-    <!-- CTA Buttons -->
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a
-        href="tel:5619138786"
-        class="bg-maroon text-white px-8 py-3 font-bold uppercase tracking-wider text-center hover:bg-red-900 transition-colors text-sm md:text-base"
-      >
-        Call (561) 913-8786
-      </a>
-      <a
-        href="#gallery"
-        class="border-2 border-white text-white px-8 py-3 font-bold uppercase tracking-wider text-center hover:bg-white hover:text-navy transition-colors text-sm md:text-base"
-      >
-        Our Gallery
-      </a>
     </div>
   </div>
 </section>
@@ -72,5 +79,58 @@
 <style>
   .free-estimate-badge {
     transform: skewX(-5deg);
+    animation: badge-glow 3s ease-in-out infinite;
+  }
+  @keyframes badge-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(196, 113, 20, 0);
+    }
+    50% {
+      box-shadow: 0 0 18px 4px rgba(196, 113, 20, 0.45);
+    }
+  }
+  .grid-wrapper {
+      min-height: 100%;
+      width: 100%;
+      position: relative;
+      background-color: #f8fffa;
+  }
+  /* Hero with left-to-right gradient overlay + background image */
+  .hero-section {
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.15), rgba(0,0,0,0.0)),
+      url('/images/LandingPage/Hero worker.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  @media (max-width: 767px) {
+    .hero-section {
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.0)),
+        url('/images/LandingPage/Hero worker.png');
+      background-position: center top;
+    }
+  }
+  .grid-background {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      background-image: linear-gradient(to right, #c8ddfd 1px, transparent 1px),
+      linear-gradient(to bottom, #e2e8fa 1px, transparent 1px);
+      background-size: 20px 30px;
+      -webkit-mask-image: radial-gradient(
+              ellipse 70% 60% at 50% 0%,
+              #000 60%,
+              transparent 100%
+      );
+      mask-image: radial-gradient(
+              ellipse 70% 60% at 50% 0%,
+              #000 60%,
+              transparent 100%
+      );
   }
 </style>

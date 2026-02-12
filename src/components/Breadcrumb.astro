@@ -6,7 +6,7 @@ interface Props {
 const { items } = Astro.props;
 ---
 <!-- Accent bar -->
-<div class="h-1 bg-maroon"></div>
+<div class="h-1 bg-brown"></div>
 
 <!-- Breadcrumb -->
 <div class="bg-gray-50 border-b border-gray-200">
@@ -16,7 +16,7 @@ const { items } = Astro.props;
         <li class="flex items-center gap-2">
           {index > 0 && <span class="text-gray-400">/</span>}
           {item.href ? (
-            <a href={item.href} class="text-maroon hover:text-red-900 transition-colors font-medium">
+            <a href={item.href} class="text-blue-accent hover:text-blue-light transition-colors font-medium">
               {item.label}
             </a>
           ) : (

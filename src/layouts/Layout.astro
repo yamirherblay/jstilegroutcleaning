@@ -22,8 +22,10 @@ const {
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Inter+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
 		<title>{title}</title>
+		<slot name="head" />
 	</head>
-	<body class="font-body text-gray-800 m-0 pt-[57px]">
+	<body class="font-body text-[#2B2B2B] m-0 pt-[57px]">
 		<slot />
 	</body>
+
 </html>
