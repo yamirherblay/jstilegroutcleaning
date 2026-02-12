@@ -1,26 +1,34 @@
 ---
 const projects = [
   {
-    title: 'Kitchen Floor Restoration',
+    title: 'Dinnerooom Floor Restoration',
     stars: 5,
+    image: {
+      before: '/images/LandingPage/Before 1.png',
+      after: '/images/LandingPage/After 1.png',
+    },
   },
   {
-    title: 'Bathroom Shower Repair',
+    title: 'Bathroom Floor Restoration',
     stars: 5,
+    image: {
+      before: '/images/LandingPage/Before 2.png',
+      after: '/images/LandingPage/After 2.png',
+    },
   },
 ];
 ---
-<section id="gallery" class="bg-navy py-16 md:py-20">
+<section id="gallery" class="bg-white py-16 md:py-20">
   <div class="max-w-7xl mx-auto px-4">
     <!-- Section Header -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
       <div>
-        <p class="text-maroon font-bold uppercase tracking-widest text-sm mb-2">Our Results</p>
-        <h2 class="font-heading text-3xl md:text-4xl font-bold italic text-white">Dramatic Transformations</h2>
+        <p class="text-orange font-bold uppercase tracking-widest text-sm mb-2">Our Results</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold italic text-grey-700">Transformations</h2>
       </div>
       <a
-        href="#"
-        class="mt-4 md:mt-0 border-2 border-white text-white px-6 py-3 font-bold uppercase tracking-wider text-sm text-center hover:bg-white hover:text-navy transition-colors self-start"
+        href="/gallery"
+        class="mt-4 md:mt-0 rounded-2xl border-white bg-orange text-white px-6 py-3 font-bold uppercase tracking-wider text-sm text-center hover:bg-orange-dark hover:text-white transition-colors self-start"
       >
         Full Gallery
       </a>
@@ -34,12 +42,12 @@ const projects = [
           <div class="relative flex h-48 md:h-64 overflow-hidden">
             <!-- Before -->
             <div class="w-1/2 bg-gray-700 flex items-center justify-center relative">
-              <span class="text-gray-400 text-sm">Before Photo</span>
-              <span class="absolute top-3 left-3 bg-maroon text-white text-xs font-bold uppercase px-2 py-1">Before</span>
+              <img src={project.image.before} alt={`${project.title} Before`} class="absolute inset-0 w-full h-full object-cover opacity-50" />
+              <span class="absolute top-3 left-3 bg-orange text-white text-xs font-bold uppercase px-2 py-1">Before</span>
             </div>
             <!-- After -->
             <div class="w-1/2 bg-gray-500 flex items-center justify-center relative">
-              <span class="text-gray-300 text-sm">After Photo</span>
+                <img src={project.image.after} alt={`${project.title} After`} class="absolute inset-0 w-full h-full object-cover opacity-50" />
               <span class="absolute top-3 right-3 bg-green-700 text-white text-xs font-bold uppercase px-2 py-1">After</span>
             </div>
           </div>
@@ -49,8 +57,7 @@ const projects = [
             <div class="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
                 <svg
-                  class={`w-4 h-4 ${i < project.stars ? 'text-gold' : 'text-gray-600'}`}
-                  fill="none"
+                  class={`w-4 h-4 ${i < project.stars ? 'text-orange' : 'text-gray-600'}`}
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   stroke-width="2"
@@ -65,3 +72,5 @@ const projects = [
     </div>
   </div>
 </section>
+<style>
+</style>

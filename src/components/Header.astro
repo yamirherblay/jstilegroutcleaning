@@ -1,26 +1,25 @@
 ---
 ---
-<header class="fixed top-0 left-0 right-0 bg-navy text-white z-30 shadow-md">
+<header class="fixed top-0 left-0 right-0 bg-white text-brown z-30 shadow-md">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="flex flex-col leading-tight">
-      <span class="text-lg font-bold tracking-wide"><span class="text-gold italic">JS</span> TILE & GROUT</span>
-      <span class="text-gold text-xs tracking-widest uppercase">Cleaning Services</span>
+      <img src="/images/Logo.png" alt="JS Tile & Grout Cleaning Logo" class="w-36 h-auto md:w-44" loading="eager" />
     </a>
 
     <!-- Phone (hidden on mobile) -->
     <div class="hidden md:flex flex-col items-center">
-      <a href="tel:5619138786" class="text-lg font-bold hover:text-gold transition-colors">(561) 913-8786</a>
-      <span class="text-gold text-xs uppercase tracking-wider">Se Habla Español</span>
+      <a href="tel:5619138786" class="text-lg font-bold hover:text-orange transition-colors">(561) 913-8786</a>
+      <span class="text-orange text-xs uppercase tracking-wider">We speak Spanish</span>
     </div>
 
     <!-- Desktop Nav (hidden on mobile) -->
     <nav class="hidden lg:flex items-center gap-6">
-      <a href="/" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">Home</a>
-      <a href="/aboutUs" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">About Us</a>
-      <a href="/services" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">Services</a>
-      <a href="/#gallery" class="text-sm font-semibold uppercase tracking-wider hover:text-gold transition-colors">Gallery</a>
-      <a href="/contact" class="bg-maroon text-white px-5 py-2 text-sm font-bold uppercase tracking-wider hover:bg-red-900 transition-colors">Contact Us</a>
+      <a href="/" class="text-sm font-semibold uppercase tracking-wider hover:text-orange transition-colors">Home</a>
+      <a href="/aboutUs" class="text-sm font-semibold uppercase tracking-wider hover:text-orange transition-colors">About Us</a>
+      <a href="/services" class="text-sm font-semibold uppercase tracking-wider hover:text-orange transition-colors">Services</a>
+      <a href="/gallery" class="text-sm font-semibold uppercase tracking-wider hover:text-orange transition-colors">Gallery</a>
+      <a href="/contact" class="bg-orange rounded-2xl text-white px-5 py-2 text-sm font-bold uppercase tracking-wider hover:bg-orange-dark transition-colors">Contact Us</a>
     </nav>
 
     <!-- Hamburger Button (mobile only) -->
@@ -30,9 +29,9 @@
       aria-label="Toggle menu"
       aria-expanded="false"
     >
-      <span class="block w-6 h-0.5 bg-white"></span>
-      <span class="block w-6 h-0.5 bg-white"></span>
-      <span class="block w-6 h-0.5 bg-white"></span>
+      <span class="block w-6 h-0.5 bg-brown"></span>
+      <span class="block w-6 h-0.5 bg-brown"></span>
+      <span class="block w-6 h-0.5 bg-brown"></span>
     </button>
   </div>
 
@@ -47,15 +46,14 @@
 <!-- Drawer Panel -->
 <nav
   id="drawer-panel"
-  class="lg:hidden fixed top-0 left-0 h-full w-72 bg-navy-dark z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+  class="lg:hidden fixed top-0 left-0 h-full w-72 bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
 >
   <!-- Drawer Header -->
-  <div class="flex items-center justify-between px-5 py-4 border-b border-gray-700">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
     <a href="/" class="flex flex-col leading-tight">
-      <span class="text-lg font-bold tracking-wide text-white"><span class="text-gold italic">JS</span> TILE & GROUT</span>
-      <span class="text-gold text-xs tracking-widest uppercase">Cleaning Services</span>
+            <img src="/images/Logo.png" alt="JS Tile & Grout Cleaning Logo" class="h-12 w-auto" loading="eager"/>
     </a>
-    <button id="drawer-close" class="text-white p-2" aria-label="Close menu">
+    <button id="drawer-close" class="text-brown p-2" aria-label="Close menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
@@ -64,24 +62,23 @@
 
   <!-- Phone & Español -->
   <div class="px-5 py-4 text-center">
-    <a href="tel:5619138786" class="block text-lg font-bold text-white hover:text-gold transition-colors">(561) 913-8786</a>
-    <span class="text-gold text-xs uppercase tracking-wider">Se Habla Español</span>
+    <a href="tel:5619138786" class="block text-lg font-bold text-brown hover:text-orange transition-colors">(561) 913-8786</a>
+    <span class="text-orange text-xs uppercase tracking-wider">We talk Spanish</span>
   </div>
 
-  <hr class="border-gray-700 mx-5" />
+  <hr class="border-gray-200 mx-5" />
 
   <!-- Nav Links -->
   <div class="flex flex-col px-5 py-4 gap-1">
-    <a href="/" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Home</a>
-    <a href="/aboutUs" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">About Us</a>
-    <a href="/services" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Services</a>
-    <a href="/#gallery" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Gallery</a>
-    <a href="/contact" class="drawer-link text-sm font-semibold uppercase tracking-wider text-white hover:text-gold transition-colors py-3">Contact</a>
+    <a href="/" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-orange transition-colors py-3">Home</a>
+    <a href="/aboutUs" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-orange transition-colors py-3">About Us</a>
+    <a href="/services" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-orange transition-colors py-3">Services</a>
+    <a href="/gallery" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-orange transition-colors py-3">Gallery</a>
   </div>
 
   <!-- Contact Button -->
   <div class="mt-auto px-5 py-6">
-    <a href="/contact" class="drawer-link block bg-maroon text-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-center hover:bg-red-900 transition-colors">Contact Us</a>
+    <a href="/contact" class="drawer-link block bg-orange rounded-2xl text-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-center hover:bg-orange-dark transition-colors">Contact Us</a>
   </div>
 </nav>
 

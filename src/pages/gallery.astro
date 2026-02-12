@@ -1,0 +1,340 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import Footer from '../components/Footer.astro';
+import { galleryItems, categories, categoryLabels } from '../data/gallery';
+---
+<Layout
+  title="Gallery | JS Tile & Grout Cleaning — Before & After Transformations"
+  description="See the results of our professional tile and grout cleaning. Browse before and after photos of tile restoration, grout cleaning, and marble polishing in South Florida."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "JS Tile & Grout Cleaning — Project Gallery",
+      "description": "Before and after photos of professional tile cleaning, grout restoration, marble polishing, and shower repair projects in South Florida.",
+      "url": "https://jstilesgroutcleaning.com/gallery",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JS Tile & Grout Cleaning Services",
+        "telephone": "+1-561-913-8786"
+      }
+    })} />
+  </Fragment>
+
+  <Header />
+  <PageHero
+    badge="Our Work"
+    heading="Project Gallery"
+    subtitle='Browse our before &amp; after transformations across South Florida. <span class="text-orange font-semibold">Real results, real homes.</span>'
+    image="/images/Services/calidaddeltrabajo.png"
+  />
+  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Gallery" }]} />
+
+  <!-- Filters + Gallery -->
+  <section class="bg-white py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-10 md:mb-14">
+        <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">Before & After</p>
+        <h2 class="font-heading text-2xl md:text-3xl font-bold italic text-gray-900 mb-4">Our Transformations</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Drag the slider on each photo to reveal the transformation. Click any card to view it full-size.
+        </p>
+        <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        {categories.map(cat => (
+          <button
+            data-filter={cat.id}
+            class:list={[
+              'filter-btn px-5 py-2 font-bold uppercase tracking-wider text-sm transition-colors rounded-sm',
+              cat.id === 'all' ? 'bg-brown text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300',
+            ]}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+        {galleryItems.map((item, index) => (
+          <div class="gallery-item" data-category={item.category}>
+            <div class="group cursor-pointer" data-index={index}>
+              <!-- Comparison Slider -->
+              <div class="slider-container relative overflow-hidden rounded-lg aspect-[4/3] bg-gray-200">
+                <img
+                  src={item.beforeThumb}
+                  alt={`${item.title} - Before`}
+                  class="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <img
+                  src={item.afterThumb}
+                  alt={`${item.title} - After`}
+                  class="slider-after absolute inset-0 w-full h-full object-cover"
+                  style="clip-path: inset(0 50% 0 0)"
+                  loading="lazy"
+                />
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="slider-range absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-10"
+                  aria-label={`Compare before and after for ${item.title}`}
+                />
+                <div
+                  class="slider-line absolute top-0 bottom-0 w-0.5 bg-white/90 pointer-events-none z-[5]"
+                  style="left: 50%"
+                >
+                  <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-brown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M8 6l-4 6 4 6M16 6l4 6-4 6" />
+                    </svg>
+                  </div>
+                </div>
+                <span class="absolute bottom-3 left-3 bg-brown/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">Before</span>
+                <span class="absolute bottom-3 right-3 bg-orange/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">After</span>
+              </div>
+              <!-- Card Info -->
+              <div class="mt-3">
+                <h3 class="font-heading text-lg font-bold italic text-brown">{item.title}</h3>
+                <p class="text-gray-500 text-sm uppercase tracking-wider">{categoryLabels[item.category]}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Empty State -->
+      <p id="gallery-empty" class="hidden text-center text-gray-500 py-12">No projects found in this category yet.</p>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center" role="dialog" aria-label="Image viewer">
+    <!-- Close -->
+    <button id="lb-close" class="absolute top-4 right-4 text-white/80 hover:text-white z-10 p-2" aria-label="Close lightbox">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <!-- Prev -->
+    <button id="lb-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2" aria-label="Previous image">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <!-- Next -->
+    <button id="lb-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2" aria-label="Next image">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+    <!-- Content -->
+    <div class="max-w-4xl w-full mx-4">
+      <div id="lb-slider" class="slider-container relative overflow-hidden rounded-lg aspect-[4/3] bg-gray-900">
+        <img id="lb-before" src="" alt="" class="absolute inset-0 w-full h-full object-cover" />
+        <img id="lb-after" src="" alt="" class="slider-after absolute inset-0 w-full h-full object-cover" style="clip-path: inset(0 50% 0 0)" />
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="slider-range absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-10"
+          aria-label="Compare before and after"
+        />
+        <div class="slider-line absolute top-0 bottom-0 w-0.5 bg-white/90 pointer-events-none z-[5]" style="left: 50%">
+          <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-brown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 6l-4 6 4 6M16 6l4 6-4 6" />
+            </svg>
+          </div>
+        </div>
+        <span class="absolute bottom-3 left-3 bg-brown/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">Before</span>
+        <span class="absolute bottom-3 right-3 bg-orange/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">After</span>
+      </div>
+      <div class="text-center mt-4">
+        <p id="lb-title" class="text-white font-heading font-bold italic text-lg"></p>
+        <p id="lb-counter" class="text-white/60 text-sm mt-1"></p>
+      </div>
+    </div>
+  </div>
+
+  <CtaBanner />
+  <Footer />
+</Layout>
+
+<style>
+  /* Custom range slider thumb for comparison sliders */
+  .slider-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 100%;
+    cursor: ew-resize;
+  }
+  .slider-range::-moz-range-thumb {
+    width: 40px;
+    height: 100%;
+    cursor: ew-resize;
+    border: none;
+    background: transparent;
+  }
+</style>
+
+<script>
+  // ── Comparison Sliders ──
+  document.querySelectorAll('.slider-range').forEach(range => {
+    range.addEventListener('input', (e) => {
+      const target = e.target as HTMLInputElement;
+      const container = target.closest('.slider-container');
+      if (!container) return;
+      const val = target.value;
+      const after = container.querySelector('.slider-after') as HTMLElement;
+      const line = container.querySelector('.slider-line') as HTMLElement;
+      if (after) after.style.clipPath = `inset(0 ${100 - Number(val)}% 0 0)`;
+      if (line) line.style.left = `${val}%`;
+    });
+  });
+
+  // ── Filter System ──
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const emptyState = document.getElementById('gallery-empty');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = (btn as HTMLElement).dataset.filter;
+
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-brown', 'text-white');
+        b.classList.add('bg-gray-200', 'text-gray-700');
+      });
+      btn.classList.remove('bg-gray-200', 'text-gray-700');
+      btn.classList.add('bg-brown', 'text-white');
+
+      let visibleCount = 0;
+      galleryItems.forEach(item => {
+        const el = item as HTMLElement;
+        const show = filter === 'all' || el.dataset.category === filter;
+        el.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+
+      if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
+    });
+  });
+
+  // ── Lightbox ──
+  const lightbox = document.getElementById('lightbox');
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev = document.getElementById('lb-prev');
+  const lbNext = document.getElementById('lb-next');
+  const lbBefore = document.getElementById('lb-before') as HTMLImageElement;
+  const lbAfter = document.getElementById('lb-after') as HTMLImageElement;
+  const lbTitle = document.getElementById('lb-title');
+  const lbCounter = document.getElementById('lb-counter');
+  const lbSlider = document.getElementById('lb-slider');
+
+  interface LightboxItem {
+    beforeFull: string;
+    afterFull: string;
+    title: string;
+  }
+
+  const items: LightboxItem[] = [
+    { beforeFull: '/images/LandingPage/Before 1.png', afterFull: '/images/LandingPage/After 1.png', title: 'Kitchen Floor Deep Clean' },
+    { beforeFull: '/images/LandingPage/Before 2.png', afterFull: '/images/LandingPage/After 2.png', title: 'Bathroom Grout Restoration' },
+    { beforeFull: '/images/LandingPage/Before 1.png', afterFull: '/images/LandingPage/After 1.png', title: 'Marble Countertop Polish' },
+    { beforeFull: '/images/LandingPage/Before 2.png', afterFull: '/images/LandingPage/After 2.png', title: 'Shower Stall Regrout' },
+  ];
+
+  let currentIndex = 0;
+  let visibleIndices: number[] = [];
+
+  function getVisibleIndices(): number[] {
+    const indices: number[] = [];
+    galleryItems.forEach((item, i) => {
+      if ((item as HTMLElement).style.display !== 'none') indices.push(i);
+    });
+    return indices;
+  }
+
+  function showLightbox(index: number) {
+    visibleIndices = getVisibleIndices();
+    currentIndex = index;
+    updateLightbox();
+    lightbox?.classList.remove('hidden');
+    lightbox?.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function updateLightbox() {
+    const item = items[currentIndex];
+    if (!item) return;
+    if (lbBefore) { lbBefore.src = item.beforeFull; lbBefore.alt = `${item.title} - Before`; }
+    if (lbAfter) { lbAfter.src = item.afterFull; lbAfter.alt = `${item.title} - After`; }
+    if (lbTitle) lbTitle.textContent = item.title;
+    const pos = visibleIndices.indexOf(currentIndex) + 1;
+    if (lbCounter) lbCounter.textContent = `${pos} / ${visibleIndices.length}`;
+
+    // Reset slider to 50%
+    if (lbSlider) {
+      const range = lbSlider.querySelector('.slider-range') as HTMLInputElement;
+      const after = lbSlider.querySelector('.slider-after') as HTMLElement;
+      const line = lbSlider.querySelector('.slider-line') as HTMLElement;
+      if (range) range.value = '50';
+      if (after) after.style.clipPath = 'inset(0 50% 0 0)';
+      if (line) line.style.left = '50%';
+    }
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.add('hidden');
+    lightbox?.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  function navigate(direction: number) {
+    const pos = visibleIndices.indexOf(currentIndex);
+    const next = pos + direction;
+    if (next >= 0 && next < visibleIndices.length) {
+      currentIndex = visibleIndices[next];
+      updateLightbox();
+    }
+  }
+
+  // Open lightbox on card click (not on slider input)
+  document.querySelectorAll('[data-index]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).classList.contains('slider-range')) return;
+      const index = Number((card as HTMLElement).dataset.index);
+      showLightbox(index);
+    });
+  });
+
+  lbClose?.addEventListener('click', closeLightbox);
+  lbPrev?.addEventListener('click', () => navigate(-1));
+  lbNext?.addEventListener('click', () => navigate(1));
+
+  // Close on overlay click
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox?.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+  });
+</script>

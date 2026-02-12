@@ -4,13 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: '#1B1B2F',
-        'navy-dark': '#13131F',
-        maroon: '#8B1A1A',
-        gold: '#C5A028',
+        orange: '#C47114',
+        'orange-dark': '#A65E10',
+        brown: '#690E11',
+        'brown-dark': '#4F0B0D',
+        'blue-accent': '#0D80A1',
+        'blue-light': '#1A9EC4',
+        'blue-bg': '#E6F5F9',
       },
       fontFamily: {
-        heading: ['"Playfair Display"', 'serif'],
+        heading: ['"Inter"', 'serif'],
         body: ['"Open Sans"', 'sans-serif'],
       },
     },

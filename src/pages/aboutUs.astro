@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import Footer from '../components/Footer.astro';
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "JS Tile & Grout Cleaning",
+  "description": "Professional tile and grout cleaning and restoration services in South Florida.",
+  "telephone": "+1-561-913-8786",
+  "areaServed": "South Florida",
+  "serviceType": ["Tile Cleaning", "Grout Cleaning", "Marble Restoration", "Shower Repair"],
+  "knowsLanguage": ["English", "Spanish"]
+};
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Free Inspection",
+    description: "We visit your property, assess the condition of your tile and grout, and provide a detailed, no-obligation estimate."
+  },
+  {
+    number: "02",
+    title: "Professional Cleaning",
+    description: "Our team uses professional-grade equipment and eco-friendly products to deep clean, restore, and protect your surfaces."
+  },
+  {
+    number: "03",
+    title: "Lasting Results",
+    description: "We finish with sealing and protection so your tile and grout stay clean and beautiful for years to come."
+  }
+];
+---
+<Layout
+  title="About Us | JS Tile & Grout Cleaning — South Florida Tile Restoration"
+  description="Meet the team behind JS Tile & Grout Cleaning. Licensed, insured, and bilingual professionals serving South Florida with expert tile and grout restoration services."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </Fragment>
+  <Header />
+  <PageHero
+    badge="About Us"
+    heading="JS Tile & Grout Cleaning"
+    subtitle='South Florida&apos;s trusted tile restoration team. <span class="text-orange font-semibold">We Speak Spanish.</span>'
+    image="/images/Hero AboutUs.png"
+  />
+  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About Us" }]} />
+
+  <!-- Section A: Who We Are -->
+  <section class="bg-white py-12 md:py-16" aria-labelledby="who-we-are">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">Get to Know Us</p>
+        <h2 id="who-we-are" class="font-heading text-2xl md:text-3xl font-bold italic text-gray-900 mb-4">Who We Are</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          A dedicated team of tile restoration professionals committed to transforming your surfaces and exceeding your expectations.
+        </p>
+        <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
+      </div>
+
+      <!-- Alternating Content Block -->
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+        <!-- Image Placeholder -->
+        <div class="w-full lg:w-5/12 flex-shrink-0">
+          <div class="bg-blue-accent rounded-lg aspect-[4/3] flex items-center justify-center" role="img" aria-label="JS Tile & Grout Cleaning team">
+           <img src="/images/Hero AboutUs.png" alt="JS Tile & Grout Cleaning team" class="w-full h-full object-cover rounded-lg" />
+              <!-- <svg class="w-20 h-20 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>-->
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="w-full lg:w-7/12">
+          <h3 class="font-heading text-2xl md:text-3xl font-bold italic text-brown mb-4">Dedicated to Quality Restoration</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            JS Tile & Grout Cleaning is a professional tile and grout cleaning company serving South Florida's residential and commercial properties. With years of hands-on experience, our team specializes in restoring tile, grout, marble, and natural stone surfaces to their original beauty. We take pride in delivering restoration services that make a real difference in every home and business we work with.
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">Licensed & insured professionals</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">Bilingual team (English & Spanish)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">Free estimates, no hidden fees</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">Serving all of South Florida</span>
+            </li>
+          </ul>
+
+          <a
+            href="/services"
+            class="inline-block bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
+          >
+            View Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section B: Why Choose Us -->
+  <section class="bg-gray-50 py-12 md:py-16" aria-labelledby="why-choose-us">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-12 items-center">
+        <!-- Image Placeholder -->
+        <div class="w-full lg:w-5/12 flex-shrink-0">
+          <div class="bg-brown rounded-lg aspect-[4/3] flex items-center justify-center" role="img" aria-label="Quality guarantee">
+                <img src="/images/Services/calidaddeltrabajo.png" alt="Quality guarantee" class="w-full h-full object-cover rounded-lg" />
+           <!-- <svg class="w-20 h-20 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+            </svg>-->
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="w-full lg:w-7/12">
+          <h2 id="why-choose-us" class="font-heading text-2xl md:text-3xl font-bold italic text-gray-900 mb-2">Why Choose Us</h2>
+          <h3 class="font-heading text-2xl md:text-3xl font-bold italic text-brown mb-4">Experience You Can Trust</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            When it comes to professional tile restoration in South Florida, JS Tile & Grout Cleaning stands apart. We combine industry expertise with a genuine commitment to customer satisfaction. Every project receives our full attention to detail, ensuring trusted results that speak for themselves.
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">State-of-the-art cleaning equipment</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">Eco-friendly cleaning products</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">Residential & commercial expertise</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-700">100% satisfaction guaranteed</span>
+            </li>
+          </ul>
+
+          <a
+            href="/contact"
+            class="inline-block bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
+          >
+            Get a Free Estimate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section C: Our Process -->
+  <section class="bg-white py-12 md:py-16" aria-labelledby="our-process">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">How It Works</p>
+        <h2 id="our-process" class="font-heading text-2xl md:text-3xl font-bold italic text-gray-900 mb-4">Our Process</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          From the first inspection to the final result, we keep it simple, transparent, and hassle-free.
+        </p>
+        <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
+      </div>
+
+      <!-- Process Steps -->
+      <ol class="grid grid-cols-1 md:grid-cols-3 gap-8 list-none p-0 m-0">
+        {processSteps.map((step) => (
+          <li class="bg-gray-50 rounded-lg p-8 text-center">
+            <span class="text-orange font-heading text-4xl font-bold italic" aria-hidden="true">{step.number}</span>
+            <h3 class="font-heading text-xl md:text-2xl font-bold italic text-brown mt-3 mb-3">{step.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{step.description}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <CtaBanner />
+  <Footer />
+</Layout>
