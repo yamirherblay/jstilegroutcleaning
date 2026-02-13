@@ -8,7 +8,7 @@ interface Props {
 
 const { badge, heading, subtitle, image } = Astro.props;
 ---
-<section class="relative bg-white overflow-hidden">
+<section class="relative bg-white overflow-hidden border-b-2 border-brown">
   <!-- Background overlay -->
   <div class="absolute inset-0">
       <img src={image} alt="Hero Background" class="w-full h-full object-cover opacity-50" />
@@ -23,19 +23,22 @@ const { badge, heading, subtitle, image } = Astro.props;
         {badge}
       </span>
     </div>
-
+      <div class="max-w-7xl mx-auto px-4 py-12 md:py-16 bg-heading text-center" >
     <!-- Main Heading -->
-    <h1 class="font-heading text-3xl md:text-5xl font-bold italic leading-tight mb-4 text-brown">
+    <h1 class="font-heading text-3xl md:text-5xl  font-bold italic leading-tight mb-4 text-brown">
       {heading}
     </h1>
-
     <!-- Subtitle -->
     <p class="text-gray-700 text-base md:text-lg max-w-2xl mx-auto" set:html={subtitle} />
+  </div>
   </div>
 </section>
 
 <style>
   .free-estimate-badge {
     transform: skewX(-5deg);
+  }
+  .bg-heading {
+      background: rgb(255,255,255,0.40);
   }
 </style>

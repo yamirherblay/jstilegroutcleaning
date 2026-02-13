@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import PageHero from '../components/PageHero.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
 
@@ -49,7 +48,6 @@ const processSteps = [
     subtitle='South Florida&apos;s trusted tile restoration team. <span class="text-orange font-semibold">We Speak Spanish.</span>'
     image="/images/Hero AboutUs.png"
   />
-  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About Us" }]} />
 
   <!-- Section A: Who We Are -->
   <section class="bg-white py-12 md:py-16" aria-labelledby="who-we-are">
@@ -115,7 +113,7 @@ const processSteps = [
 
           <a
             href="/services"
-            class="inline-block bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
+            class="inline-block rounded-2xl bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
           >
             View Our Services
           </a>
@@ -176,7 +174,7 @@ const processSteps = [
 
           <a
             href="/contact"
-            class="inline-block bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
+            class="inline-block rounded-2xl bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
           >
             Get a Free Estimate
           </a>

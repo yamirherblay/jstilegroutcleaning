@@ -13,7 +13,7 @@ import { services } from '../data/services';
     <!-- Service Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {services.map((service) => (
-        <div class="bg-white p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+        <div class="bg-neutral-100 p-6 rounded-2xl border-gray-100 hover:shadow-lg hover:bg-blue-50  transition-shadow">
           <!-- Icon -->
           <div class={`w-12 h-12 ${service.iconBg} rounded flex items-center justify-center mb-4`}>
             {service.icon === 'tile' && (
