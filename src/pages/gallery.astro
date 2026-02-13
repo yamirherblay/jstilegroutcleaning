@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import PageHero from '../components/PageHero.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
+
 import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
 import { galleryItems, categories, categoryLabels } from '../data/gallery';
@@ -33,7 +33,6 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
     subtitle='Browse our before &amp; after transformations across South Florida. <span class="text-orange font-semibold">Real results, real homes.</span>'
     image="/images/Services/calidaddeltrabajo.png"
   />
-  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Gallery" }]} />
 
   <!-- Filters + Gallery -->
   <section class="bg-white py-12 md:py-16">

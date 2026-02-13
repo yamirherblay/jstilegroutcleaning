@@ -2,11 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import PageHero from '../components/PageHero.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
 import { services } from '../data/services';
 ---
+
+
 <Layout title="Our Services | JS Tile & Grout" description="Professional tile and grout cleaning, marble restoration, sealing, and shower repair services in South Florida. Call (561) 913-8786.">
   <Header />
   <PageHero
@@ -15,10 +16,9 @@ import { services } from '../data/services';
     subtitle='Expert restoration for residential and commercial properties. <span class="text-orange font-semibold">We Speak Spanish.</span>'
     image="/images/Services/Services.png"
   />
-  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
 
   <!-- Services Content -->
-  <section class="bg-white py-12 md:py-16">
+  <section class="bg-blue-50 py-12 md:py-16">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16">
@@ -88,7 +88,7 @@ import { services } from '../data/services';
                 {/* CTA */}
                 <a
                   href="/contact"
-                  class="inline-block bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
+                  class="inline-block  rounded-2xl bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
                 >
                   Request Estimate
                 </a>
@@ -103,3 +103,4 @@ import { services } from '../data/services';
   <CtaBanner />
   <Footer />
 </Layout>
+
