@@ -71,4 +71,19 @@ export const services: Service[] = [
     ],
       image: '/images/Services/Bath.png',
   },
+    {
+        id: 'grout-color-sealing',
+        title: 'Grout Color Sealing',
+        description: 'Restore, protect, and permanently recolor your grout lines for a clean, uniform, and like-new appearance. Our color sealing also protects against stains, mold, and future discoloration.',
+        details: 'Grout Color Sealing goes beyond traditional sealing by combining a powerful penetrating sealer with a color-enhancing pigment. This process creates an invisible waterproof barrier that prevents moisture absorption, mold growth, and stains, while simultaneously restoring and unifying the original color of your grout. The result is a durable, easy-to-clean surface with a fresh, uniform finish that extends the life of your grout and keeps your shower looking immaculate for years to come.',
+        iconBg: 'bg-brown',
+        icon: 'tile',
+        features: [
+        'Permanent color restoration and unification',
+        'Invisible waterproof barrier protection',
+        'Stain, mold, and mildew resistance',
+        'Easy-to-clean, low-maintenance finish',
+                ],
+        image: 'images/Services/calidaddeltrabajo.png',
+    },
 ];

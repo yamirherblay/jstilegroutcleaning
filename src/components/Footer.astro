@@ -3,12 +3,15 @@ interface SocialLinks {
     Facebook?: string;
     Instagram?: string;
     Twitter?: string;
+    TikTok?: string;
 }
 const socialLinks = Astro.props.socialLinks as SocialLinks || {
     Facebook: 'https://www.facebook.com/profile.php?id=61576322027795&sk',
     Instagram: 'https://www.instagram.com/jstileandgrout/',
     Twitter: '',
+    TikTok: 'https://www.tiktok.com/@jstileandgrout'
 };
+
 ---
 <footer id="contact" class="bg-blue-50 text-gray-700 py-12 md:py-16">
   <div class="max-w-7xl mx-auto px-4">
@@ -38,7 +41,7 @@ const socialLinks = Astro.props.socialLinks as SocialLinks || {
                 </svg>
             </a>
             <!-- TikTok -->
-            <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-blue-accent hover:text-blue-accent text-gray-500 transition-colors" aria-label="TikTok">
+            <a href={socialLinks.TikTok} class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-blue-accent hover:text-blue-accent text-gray-500 transition-colors" aria-label="TikTok">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15V11.7a4.83 4.83 0 01-3.77-1.24V6.69h3.77z"/>
                 </svg>
@@ -54,6 +57,7 @@ const socialLinks = Astro.props.socialLinks as SocialLinks || {
           <li><a href="/services#marble-restoration" class="text-gray-600 text-sm hover:text-orange transition-colors">Marble Restoration</a></li>
           <li><a href="/services#sealing-stripping" class="text-gray-600 text-sm hover:text-orange transition-colors">Sealing & Stripping</a></li>
           <li><a href="/services#shower-repairs" class="text-gray-600 text-sm hover:text-orange transition-colors">Shower Repairs</a></li>
+          <li><a href="/services#grout-color-sealing" class="text-gray-600 text-sm hover:text-orange transition-colors">Grout Color Sealing</a></li>
         </ul>
       </div>
       <!-- Column 3: Contact Info -->

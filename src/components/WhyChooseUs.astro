@@ -1,0 +1,97 @@
+---
+const features = [
+  {
+    title: 'Licensed & Insured',
+    description: 'Fully licensed professionals you can trust with your home or business.',
+    iconBg: 'bg-brown',
+    icon: 'shield-check',
+  },
+  {
+    title: 'Commercial General Liability Insurance',
+    description: 'Covered by commercial general liability insurance for your complete peace of mind.',
+    iconBg: 'bg-blue-accent',
+    icon: 'check-circle',
+  },
+  {
+    title: 'Professional Equipment',
+    description: 'State-of-the-art tools and eco-friendly products for superior results every time.',
+    iconBg: 'bg-brown',
+    icon: 'cog',
+  },
+  {
+    title: 'Free Estimates',
+    description: 'Transparent, no-surprise pricing with complimentary on-site assessments.',
+    iconBg: 'bg-blue-accent',
+    icon: 'clipboard-check',
+  },
+  {
+    title: 'Residential & Commercial',
+    description: 'Expert service for homes, offices, restaurants, and commercial properties.',
+    iconBg: 'bg-brown',
+    icon: 'building',
+  },
+  {
+    title: 'Serving South Florida',
+    description: 'Proudly serving communities across South Florida with reliable, local service.',
+    iconBg: 'bg-blue-accent',
+    icon: 'location-marker',
+  },
+];
+---
+<section id="why-choose-us" class="bg-white py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">Why Choose Us</p>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold italic text-gray-700">The JS Tile & Grout Difference</h2>
+      <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
+    </div>
+
+    <!-- Feature Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature) => (
+        <div class="bg-neutral-100 p-6 rounded-2xl hover:shadow-lg hover:bg-blue-50 transition-shadow text-center">
+          <!-- Icon -->
+          <div class={`w-12 h-12 ${feature.iconBg} rounded-full flex items-center justify-center mx-auto mb-4`}>
+            {feature.icon === 'shield-check' && (
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            )}
+            {feature.icon === 'check-circle' && (
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            )}
+            {feature.icon === 'cog' && (
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            )}
+            {feature.icon === 'clipboard-check' && (
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            )}
+            {feature.icon === 'building' && (
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            )}
+            {feature.icon === 'location-marker' && (
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            )}
+          </div>
+
+          <!-- Content -->
+          <h3 class="font-bold text-gray-900 uppercase text-sm mb-3">{feature.title}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
