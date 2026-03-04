@@ -1,6 +1,6 @@
 ---
 ---
-<section class="relative grid-wrapper overflow-hidden hero-section border-b-2 border-b-brown">
+<section class="relative grid-wrapper overflow-hidden hero-section border-b-2 border-b-brown fade-slide">
   <!-- Background overlay -->
   <div class="absolute inset-0 opacity-90"></div>
   <!-- Decorative top bar -->
@@ -18,12 +18,9 @@
           </span>
             </a>
         </div>
-
         <!-- Main Heading -->
         <h1 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold italic leading-tight mb-6">
-          <span class="text-gray-700">Professional</span><br />
-          <span class="text-orange">Tile & Grout</span><br />
-          <span class="text-gray-700">Restoration</span>
+            <span class="text-gray-700"> Profesional <br> Tile & Grout Cleaning <br> in South Florida</span>
         </h1>
 
         <!-- Subtitle with accent border -->
@@ -33,7 +30,7 @@
             <span class="text-brown font-bold uppercase tracking-wider">Residential & Commercial</span>
           </div>
           <span class="hidden md:inline text-gray-500">|</span>
-          <span class="text-orange font-bold uppercase tracking-wider">We speak Spanish</span>
+          <span class="text-blue-accent font-bold uppercase tracking-wider">Se habla Español</span>
         </div>
 
         <!-- Service List -->
@@ -58,8 +55,16 @@
                 <span class="w-2 h-2 rounded-full bg-blue-accent flex-shrink-0"></span>
                 Grout Color Sealing
             </li>
-
         </ul>
+          <div class="flex flex-wrap items-center gap-3 mb-6 text-sm md:text-base">
+              <span class="text-gray-600 font-bold uppercase tracking-wider">Miami Dade County</span>
+              <span class="hidden md:inline text-gray-500">|</span>
+              <span class="text-gray-600 font-bold uppercase tracking-wider">Palm beach County</span>
+              <span class="hidden md:inline text-gray-500">|</span>
+              <span class="text-gray-600 font-bold uppercase tracking-wider">Broward County</span>
+              <span class="hidden md:inline text-gray-500">|</span>
+              <span class="text-gray-600 font-bold uppercase tracking-wider">St. Lucie County</span>
+          </div>
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4">
@@ -70,10 +75,10 @@
             Call (561) 913-8786
           </a>
           <a
-            href="#gallery"
+            href="/gallery"
             class="rounded-2xl border-brown text-brown px-8 py-3 font-bold uppercase tracking-wider text-center hover:bg-brown hover:text-white transition-colors text-sm md:text-base"
           >
-            Our Gallery
+            See Our Gallery
           </a>
         </div>
       </div>
@@ -109,33 +114,12 @@
     background-position: center;
     background-repeat: no-repeat;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 600px) {
     .hero-section {
       background-image:
               linear-gradient(to right, rgba(255, 255, 255, 1), rgba(68, 2, 2, 0.1), rgba(243, 227, 227, 0.07)),
-        url('/images/LandingPage/Hero worker.png');
-      background-position: center top;
+        url('/images/LandingPage/Hero worker 1.png');
+      background-position: center bottom;
     }
-  }
-  .grid-background {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 0;
-      background-image: linear-gradient(to right, #c8ddfd 1px, transparent 1px),
-      linear-gradient(to bottom, #e2e8fa 1px, transparent 1px);
-      background-size: 20px 30px;
-      -webkit-mask-image: radial-gradient(
-              ellipse 70% 60% at 50% 0%,
-              #000 60%,
-              transparent 100%
-      );
-      mask-image: radial-gradient(
-              ellipse 70% 60% at 50% 0%,
-              #000 60%,
-              transparent 100%
-      );
   }
 </style>

@@ -134,23 +134,6 @@ const breadcrumbSchema = {
     image="/images/Hero AboutUs.png"
   />
 
-  <!-- Breadcrumb -->
-  <nav class="bg-white border-b border-gray-200 py-3" aria-label="Breadcrumb">
-    <div class="max-w-7xl mx-auto px-4">
-      <ol class="flex items-center gap-2 text-sm text-gray-500">
-        <li>
-          <a href="/" class="hover:text-orange transition-colors">Home</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path d="M9 5l7 7-7 7" />
-          </svg>
-          <span class="text-brown font-semibold">Areas We Serve</span>
-        </li>
-      </ol>
-    </div>
-  </nav>
-
   <!-- Section 1: Coverage Stats -->
   <section class="bg-white py-12 md:py-16" aria-labelledby="coverage-heading">
     <div class="max-w-7xl mx-auto px-4">
@@ -160,7 +143,7 @@ const breadcrumbSchema = {
         <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 fade-in">
         {coverageStats.map((stat) => (
           <div class="bg-blue-bg rounded-2xl p-6 text-center">
             <div class="w-14 h-14 bg-blue-accent rounded-full flex items-center justify-center mx-auto mb-4">
@@ -195,7 +178,7 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Section 2: County Cards -->
-  <section class="bg-blue-50 py-12 md:py-16" aria-labelledby="areas-heading">
+  <section class="bg-blue-50 py-12 md:py-16 fade-in" aria-labelledby="areas-heading">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-10">
         <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">Coverage Areas</p>
@@ -271,7 +254,7 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Section 3: Services Available in Every Area -->
-  <section class="bg-gray-50 py-12 md:py-16" aria-labelledby="services-heading">
+  <section class="bg-gray-50 py-12 md:py-16 fade-in" aria-labelledby="services-heading">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-10">
         <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">What We Offer</p>
@@ -321,7 +304,7 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Section 4: Testimonials by Area -->
-  <section class="bg-white py-12 md:py-16" aria-labelledby="testimonials-heading">
+  <section class="bg-white py-12 md:py-16 fade-in" aria-labelledby="testimonials-heading">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-10">
         <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">Reviews</p>

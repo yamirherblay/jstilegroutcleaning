@@ -17,3 +17,13 @@ import Footer from '../components/Footer.astro';
   <CtaBanner />
   <Footer />
 </Layout>
+
+<script>
+  // Immediately animate hero section on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.querySelector('.fade-slide');
+    if (hero) {
+      hero.classList.add('visible');
+    }
+  });
+</script>

@@ -1,4 +1,11 @@
 ---
+const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/aboutUs', label: 'About Us' },
+    { href: '/services', label: 'Services' },
+    { href: '/serviceAreas', label: 'Areas We Serve' },
+    { href: '/gallery', label: 'Gallery' },
+];
 ---
 <header class="fixed top-0 left-0 right-0 bg-white text-brown z-30 shadow-md border-b-2 border-brown">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -10,7 +17,7 @@
     <!-- Phone (hidden on mobile) -->
     <div class="hidden md:flex flex-col items-center">
       <a href="tel:5619138786" class="text-lg font-bold hover:bg-gray-100 hover:text-orange transition-colors">(561) 913-8786</a>
-      <span class="text-blue-accent text-xs uppercase tracking-wider">We speak Spanish</span>
+      <span class="text-blue-accent text-xs uppercase tracking-wider">Se habla Español</span>
     </div>
 
     <!-- Desktop Nav (hidden on mobile) -->
@@ -64,12 +71,29 @@
   <!-- Phone & Español -->
   <div class="px-5 py-4 text-center">
     <a href="tel:5619138786" class="block text-lg font-bold text-brown hover:text-orange transition-colors">(561) 913-8786</a>
-    <span class="text-orange text-xs uppercase tracking-wider">We talk Spanish</span>
+    <span class="text-orange text-xs uppercase tracking-wider">Se habla Español</span>
   </div>
 
   <hr class="border-gray-200 mx-5" />
-
+    <div class="flex flex-col px-5 py-4 gap-1">
+        {navItems.map((item) => (
+                <a
+                        href={item.href}
+                        class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 px-3 py-3 rounded-lg border-l-[3px] border-transparent
+             hover:bg-gray-200 hover:text-black hover:border-orange
+             active:bg-orange/10 active:scale-[0.98]
+             transition-all duration-200
+             bg-transparent hover:bg-gray-200
+         hover:text-black
+         active:bg-gray-300
+         transition-colors duration-75 ease-in-out"
+                >
+                    {item.label}
+                </a>
+        ))}
+    </div>
   <!-- Nav Links -->
+<!--
   <div class="flex flex-col px-5 py-4 gap-1">
     <a href="/" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 px-3 py-3 rounded-lg border-l-[3px] border-transparent hover:bg-blue-bg hover:text-brown hover:border-orange active:bg-orange/10 active:scale-[0.98] transition-all duration-200">Home</a>
     <a href="/aboutUs" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 px-3 py-3 rounded-lg border-l-[3px] border-transparent hover:bg-blue-bg hover:text-brown hover:border-orange active:bg-orange/10 active:scale-[0.98] transition-all duration-200">About Us</a>
@@ -77,6 +101,7 @@
     <a href="/serviceAreas" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 px-3 py-3 rounded-lg border-l-[3px] border-transparent hover:bg-blue-bg hover:text-brown hover:border-orange active:bg-orange/10 active:scale-[0.98] transition-all duration-200">Areas We Serve</a>
     <a href="/gallery" class="drawer-link text-sm font-semibold uppercase tracking-wider text-gray-700 px-3 py-3 rounded-lg border-l-[3px] border-transparent hover:bg-blue-bg hover:text-brown hover:border-orange active:bg-orange/10 active:scale-[0.98] transition-all duration-200">Gallery</a>
   </div>
+-->
 
   <!-- Contact Button -->
   <div class="mt-auto px-5 py-6">
