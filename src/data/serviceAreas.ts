@@ -15,6 +15,8 @@ export interface County {
   id: string;
   name: string;
   description: string;
+    keywords?: string[];
+    mainService?: string[];
   responseTime: string;
   responseLabel: string;
   cities: City[];
@@ -33,9 +35,11 @@ export const counties: County[] = [
   {
     id: 'palm-beach',
     name: 'Palm Beach County',
+      image:'/images/AreaWeServe/Palm Beach County .jpg',
     description:
       'Our home base. We provide the fastest response times across Palm Beach County, from Jupiter in the north to Boca Raton in the south, including Wellington, Delray Beach, Boynton Beach, West Palm Beach, and Lake Worth Beach.',
     responseTime: '30-45 min',
+      keywords: ['tile cleaning palm beach county', 'grout cleaning palm beach county', 'sealing palm beach county', 'stripping palm beach county', 'near me tile cleaning palm beach county', 'near me grout cleaning palm beach county', 'near me sealing palm beach county', 'near me stripping palm beach county'],
     responseLabel: 'Fastest Response',
     cities: [
       { name: 'Jupiter', slug: 'jupiter' },
@@ -69,6 +73,7 @@ export const counties: County[] = [
   {
     id: 'broward',
     name: 'Broward County',
+      image:'/images/AreaWeServe/Broward County .webp',
     description:
       'Serving the heart of South Florida. Our Broward County coverage includes Fort Lauderdale, Miramar, Hollywood, Coral Springs, and Pembroke Pines with reliable same-day scheduling.',
     responseTime: '45-60 min',
@@ -103,6 +108,7 @@ export const counties: County[] = [
   {
     id: 'miami-dade',
     name: 'Miami-Dade County',
+      image:'/images/AreaWeServe/Miami Dade County Houses.jpg',
     description:
       'Extending our expert services to Miami-Dade County. We serve Miami, Doral, Hialeah, and Miami Beach with the same quality and attention to detail our customers expect.',
     responseTime: '60-90 min',
@@ -136,10 +142,12 @@ export const counties: County[] = [
   {
     id: 'st-lucie',
     name: 'St. Lucie County',
+      image:'/images/AreaWeServe/St Lucie County.jpg',
     description:
       'Expanding north to St. Lucie County. Residents of Port St. Lucie can count on our professional tile and grout services with scheduled appointments and guaranteed satisfaction.',
     responseTime: '60-90 min',
     responseLabel: 'By Appointment',
+      keywords: ['tile cleaning port st lucie', 'grout cleaning port st lucie', 'sealing port st lucie', 'stripping port st lucie'],
     cities: [{ name: 'Port St. Lucie', slug: 'port-st-lucie' }],
     testimonials: [
       {

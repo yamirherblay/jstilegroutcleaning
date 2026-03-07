@@ -6,11 +6,11 @@ import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
 import { services } from '../data/services';
 import { counties, coverageStats } from '../data/serviceAreas';
-import type { County, Testimonial } from '../data/serviceAreas';
+import type { County, City, Testimonial } from '../data/serviceAreas';
 
 // Collect all testimonials
 const allTestimonials: Testimonial[] = counties.flatMap((c) => c.testimonials);
-
+const allCities: string[]  = counties.flatMap((c) => c.cities.map(city => `${city.name}, ${c.name} County`));
 // Color map to avoid dynamic Tailwind class concatenation
 const colorMap: Record<string, { bg: string; text: string; border: string }> = {
   brown: { bg: 'bg-brown', text: 'text-brown', border: 'border-brown' },
@@ -80,13 +80,20 @@ const localBusinessSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Tile and Grout Cleaning",
-  "provider": { "@id": "#localbusiness" },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 26.3683, "longitude": -80.1289 },
-    "geoRadius": "150 mi"
-  }
+  "serviceType": "Tile and Grout Cleaning, Sealing, Color Sealing, and Restoration",
+  "provider": {
+      "@id": "#localbusiness",
+      "name": "JS Tile & Grout Cleaning",
+      "telephone": "+1(561) 913-8786",
+  },
+    "areaServed": allCities.map(city => ({
+        "@type": "City",
+        "name": city,
+        "containedInPlace": {
+            "@type": "State",
+            "name": "Florida"
+        }
+    })),
 };
 
 // JSON-LD: BreadcrumbList
@@ -103,6 +110,7 @@ const breadcrumbSchema = {
 <Layout
   title="Areas We Serve | Tile & Grout Cleaning — South Florida"
   description="Professional tile & grout cleaning in Palm Beach, Broward, Miami-Dade & St. Lucie counties. 17+ cities served. Call (561) 913-8786 for a free estimate."
+  canonical="https://jstilegroutcleaning.com/service-areas"
 >
   <Fragment slot="head">
     <!-- Geo Meta Tags -->
@@ -130,7 +138,7 @@ const breadcrumbSchema = {
   <PageHero
     badge="Areas We Serve"
     heading="South Florida's Trusted Tile Experts"
-    subtitle='Professional tile & grout restoration across 4 counties. <span class="text-orange font-semibold">We Speak Spanish.</span>'
+    subtitle='Professional tile & grout restoration across 4 counties. <span class="text-blue-accent font-semibold">Se habla Español.</span>'
     image="/images/Hero AboutUs.png"
   />
 
@@ -186,14 +194,14 @@ const breadcrumbSchema = {
         <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
       </div>
 
-      <div class="space-y-12 lg:space-y-16">
+      <div class="space-y-12 lg:space-y-16 fade-in">
         {counties.map((county, index) => {
           const colors = colorMap[county.accentColor];
           const isEven = index % 2 === 0;
           return (
             <div class={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}>
               <!-- Image Side -->
-              <div class="w-full lg:w-5/12 flex-shrink-0">
+              <div class="w-full lg:w-5/12 flex-shrink-0 fade-slide">
                 {county.image ? (
                   <img src={county.image} alt={county.name} class="w-full h-full object-cover rounded-lg aspect-[4/3]" />
                 ) : (
@@ -207,7 +215,7 @@ const breadcrumbSchema = {
               </div>
 
               <!-- Content Side -->
-              <div class="w-full lg:w-7/12">
+              <div class="w-full lg:w-7/12 fade-slide">
                 <h3 class="font-heading text-2xl md:text-3xl font-bold italic text-brown mb-3">{county.name}</h3>
 
                 <!-- Response Time Badge -->
@@ -221,7 +229,7 @@ const breadcrumbSchema = {
                 <p class="text-gray-600 leading-relaxed mb-5">{county.description}</p>
 
                 <!-- City Chips -->
-                <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Cities We Serve</p>
+                <p class="text-xs font-bold uppercase tracking-wider text-gray-700 mb-2 ">Cities We Serve</p>
                 <div class="flex flex-wrap gap-2 mb-6">
                   {county.cities.map((city) => (
                     <span class="bg-blue-bg text-blue-accent text-xs font-semibold px-3 py-1.5 rounded-full inline-flex items-center gap-1">

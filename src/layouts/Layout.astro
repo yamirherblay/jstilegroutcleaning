@@ -1,14 +1,27 @@
 ---
 import '../styles/animations.css';
+import '../data/serviceAreas.ts'
 
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  author?: string;
+  copyright?: string;
 }
 
 const {
   title = 'JS Tile & Grout Cleaning Services | South Florida',
   description = 'Professional tile and grout restoration services in South Florida. Residential & commercial. Call (561) 913-8786 for a free estimate.',
+  canonical = Astro.url,
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = '/images/default-og-image.jpg',
+  author = 'JS Tile & Grout Cleaning Services',
+  copyright = 'Copyright © 2026 JS Tile & Grout Cleaning Services. All rights reserved.',
 } = Astro.props;
 ---
 <!doctype html>

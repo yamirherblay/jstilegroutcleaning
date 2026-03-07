@@ -10,6 +10,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
 <Layout
   title="Gallery | JS Tile & Grout Cleaning — Before & After Transformations"
   description="See the results of our professional tile and grout cleaning. Browse before and after photos of tile restoration, grout cleaning, and marble polishing in South Florida."
+  canonical="https://jstilegroutcleaning.com/gallery"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -69,19 +70,19 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
             <div class="group cursor-pointer" data-index={index}>
               <!-- Comparison Slider -->
               <div class="slider-container relative overflow-hidden rounded-lg aspect-[4/3] bg-gray-200">
-                <img
-                  src={item.beforeThumb}
-                  alt={`${item.title} - Before`}
-                  class="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <img
-                  src={item.afterThumb}
-                  alt={`${item.title} - After`}
-                  class="slider-after absolute inset-0 w-full h-full object-cover"
-                  style="clip-path: inset(0 50% 0 0)"
-                  loading="lazy"
-                />
+
+                  <img src={item.beforeThumb}
+                       alt={`${item.title} - Before`}
+                       class="absolute inset-0 w-full h-full object-cover"
+                       loading="lazy"
+                  />
+                  <img
+                          src={item.afterThumb}
+                          alt={`${item.title} - After`}
+                          class="slider-after absolute inset-0 w-full h-full object-cover"
+                          style="clip-path: inset(0 50% 0 0)"
+                          loading="lazy"
+                  />
                 <input
                   type="range"
                   min="0"
@@ -250,7 +251,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
   }
 
   const items: LightboxItem[] = [
-    { beforeFull: '/images/LandingPage/Before 1.png', afterFull: '/images/LandingPage/After 1.png', title: 'Kitchen Floor Deep Clean' },
+    { beforeFull: '/images/LandingPage/After 1.png', afterFull: '/images/LandingPage/Before 1.png', title: 'Kitchen Floor Deep Clean' },
     { beforeFull: '/images/LandingPage/Before 2.png', afterFull: '/images/LandingPage/After 2.png', title: 'Bathroom Grout Restoration' },
     { beforeFull: '/images/LandingPage/Before 1.png', afterFull: '/images/LandingPage/After 1.png', title: 'Marble Countertop Polish' },
     { beforeFull: '/images/LandingPage/Before 2.png', afterFull: '/images/LandingPage/After 2.png', title: 'Shower Stall Regrout' },
