@@ -5,11 +5,11 @@ import PageHero from '../components/PageHero.astro';
 
 import CtaBanner from '../components/CtaBanner.astro';
 import Footer from '../components/Footer.astro';
-import { galleryItems, categories, categoryLabels } from '../data/gallery';
+import { galleryItems as galleryData, categories, categoryLabels } from '../data/gallery';
 ---
 <Layout
-  title="Gallery | JS Tile & Grout Cleaning — Before & After Transformations"
-  description="See the results of our professional tile and grout cleaning. Browse before and after photos of tile restoration, grout cleaning, and marble polishing in South Florida."
+  title="Tile & Grout Cleaning Gallery | Before & After Photos | Miami-Dade & South Florida"
+  description="See the results of our professional tile and grout cleaning. Browse before and after photos of tile restoration, grout cleaning, and marble polishing in Miami, Palm Beach, Brodway, and other cities in South Florida.."
   canonical="https://jstilegroutcleaning.com/gallery"
 >
   <Fragment slot="head">
@@ -17,7 +17,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
       "@context": "https://schema.org",
       "@type": "ImageGallery",
       "name": "JS Tile & Grout Cleaning — Project Gallery",
-      "description": "Before and after photos of professional tile cleaning, grout restoration, marble polishing, and shower repair projects in South Florida.",
+      "description": "Before and after photos of professional tile cleaning, grout restoration, marble polishing, and shower repair projects in Miami, Palm Beach, Brodway, and other cities in South Florida.",
       "url": "https://jstilesgroutcleaning.com/gallery",
       "provider": {
         "@type": "LocalBusiness",
@@ -30,8 +30,8 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
   <Header />
   <PageHero
     badge="Our Work"
-    heading="Project Gallery"
-    subtitle='Browse our before &amp; after transformations across South Florida. <span class="text-orange font-semibold">Real results, real homes.</span>'
+    heading="Tile & Grout Cleaning Before & After Transformations"
+    subtitle='Browse our transformations across in Miami, Palm Beach, Brodway, and other cities in South Florida. <span class="text-orange font-semibold">Real results, real homes.</span>'
     image="/images/Services/calidaddeltrabajo.png"
   />
 
@@ -43,7 +43,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
         <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">Before & After</p>
         <h2 class="font-heading text-2xl md:text-3xl font-bold italic text-gray-900 mb-4">Our Transformations</h2>
         <p class="text-gray-600 max-w-3xl mx-auto">
-          Drag the slider on each photo to reveal the transformation. Click any card to view it full-size.
+          Drag the slider on each photo to reveal the transformation. Click any card title to view it full-size.
         </p>
         <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
       </div>
@@ -65,12 +65,11 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
 
       <!-- Gallery Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in" id="gallery-grid">
-        {galleryItems.map((item, index) => (
+        {galleryData.map((item, index) => (
           <div class="gallery-item" data-category={item.category}>
             <div class="group cursor-pointer" data-index={index}>
               <!-- Comparison Slider -->
               <div class="slider-container relative overflow-hidden rounded-lg aspect-[4/3] bg-gray-200">
-
                   <img src={item.beforeThumb}
                        alt={`${item.title} - Before`}
                        class="absolute inset-0 w-full h-full object-cover"
@@ -80,7 +79,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
                           src={item.afterThumb}
                           alt={`${item.title} - After`}
                           class="slider-after absolute inset-0 w-full h-full object-cover"
-                          style="clip-path: inset(0 50% 0 0)"
+                          style="clip-path: inset(0 0 0 50%)"
                           loading="lazy"
                   />
                 <input
@@ -101,8 +100,8 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
                     </svg>
                   </div>
                 </div>
-                <span class="absolute bottom-3 left-3 bg-brown/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">After</span>
-                <span class="absolute bottom-3 right-3 bg-orange/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">Before</span>
+                <span class="absolute bottom-3 left-3 bg-brown/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">Before</span>
+                <span class="absolute bottom-3 right-3 bg-orange/80 text-white text-xs font-bold px-2 py-1 uppercase tracking-wider pointer-events-none">After</span>
               </div>
               <!-- Card Info -->
               <div class="mt-3">
@@ -128,22 +127,12 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
       </svg>
     </button>
     <!-- Prev -->
-    <button id="lb-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2" aria-label="Previous image">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-    <!-- Next -->
-    <button id="lb-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2" aria-label="Next image">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
+
     <!-- Content -->
     <div class="max-w-4xl w-full mx-4">
       <div id="lb-slider" class="slider-container relative overflow-hidden rounded-lg aspect-[4/3] bg-gray-900">
-        <img id="lb-before" src="" alt="" class="absolute inset-0 w-full h-full object-cover" />
-        <img id="lb-after" src="" alt="" class="slider-after absolute inset-0 w-full h-full object-cover" style="clip-path: inset(0 50% 0 0)" />
+        <img id="lb-before" alt="Before image" class="absolute inset-0 w-full h-full object-cover" src="" />
+        <img id="lb-after" alt="After image" class="slider-after absolute inset-0 w-full h-full object-cover" style="clip-path: inset(0 0 0 50%)"  src=""/>
         <input
           type="range"
           min="0"
@@ -165,6 +154,17 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
       <div class="text-center mt-4">
         <p id="lb-title" class="text-white font-heading font-bold italic text-lg"></p>
         <p id="lb-counter" class="text-white/60 text-sm mt-1"></p>
+          <button id="lb-prev" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2 z-10" aria-label="Previous image">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+          </button>
+          <!-- Next -->
+          <button id="lb-next" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2 z-10" aria-label="Next image">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+          </button>
       </div>
     </div>
   </div>
@@ -190,17 +190,17 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
   }
 </style>
 
-<script>
+<script define:vars={{ galleryData }}>
   // ── Comparison Sliders ──
   document.querySelectorAll('.slider-range').forEach(range => {
     range.addEventListener('input', (e) => {
-      const target = e.target as HTMLInputElement;
+      const target = e.target;
       const container = target.closest('.slider-container');
       if (!container) return;
       const val = target.value;
-      const after = container.querySelector('.slider-after') as HTMLElement;
-      const line = container.querySelector('.slider-line') as HTMLElement;
-      if (after) after.style.clipPath = `inset(0 ${100 - Number(val)}% 0 0)`;
+      const after = container.querySelector('.slider-after');
+      const line = container.querySelector('.slider-line');
+      if (after) after.style.clipPath = `inset(0 0 0 ${Number(val)}%)`;
       if (line) line.style.left = `${val}%`;
     });
   });
@@ -212,7 +212,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const filter = (btn as HTMLElement).dataset.filter;
+      const filter = btn.dataset.filter;
 
       filterBtns.forEach(b => {
         b.classList.remove('bg-brown', 'text-white');
@@ -223,7 +223,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
 
       let visibleCount = 0;
       galleryItems.forEach(item => {
-        const el = item as HTMLElement;
+        const el = item;
         const show = filter === 'all' || el.dataset.category === filter;
         el.style.display = show ? '' : 'none';
         if (show) visibleCount++;
@@ -238,37 +238,30 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
   const lbClose = document.getElementById('lb-close');
   const lbPrev = document.getElementById('lb-prev');
   const lbNext = document.getElementById('lb-next');
-  const lbBefore = document.getElementById('lb-before') as HTMLImageElement;
-  const lbAfter = document.getElementById('lb-after') as HTMLImageElement;
+  const lbBefore = document.getElementById('lb-before');
+  const lbAfter = document.getElementById('lb-after');
   const lbTitle = document.getElementById('lb-title');
   const lbCounter = document.getElementById('lb-counter');
   const lbSlider = document.getElementById('lb-slider');
 
-  interface LightboxItem {
-    beforeFull: string;
-    afterFull: string;
-    title: string;
-  }
-
-  const items: LightboxItem[] = [
-    { beforeFull: '/images/LandingPage/After 1.png', afterFull: '/images/LandingPage/Before 1.png', title: 'Kitchen Floor Deep Clean' },
-    { beforeFull: '/images/LandingPage/Before 2.png', afterFull: '/images/LandingPage/After 2.png', title: 'Bathroom Grout Restoration' },
-    { beforeFull: '/images/LandingPage/Before 1.png', afterFull: '/images/LandingPage/After 1.png', title: 'Marble Countertop Polish' },
-    { beforeFull: '/images/LandingPage/Before 2.png', afterFull: '/images/LandingPage/After 2.png', title: 'Shower Stall Regrout' },
-  ];
+  const items = galleryData.map(item => ({
+    beforeFull: item.beforeFull,
+    afterFull: item.afterFull,
+    title: item.title,
+  }));
 
   let currentIndex = 0;
-  let visibleIndices: number[] = [];
+  let visibleIndices = [];
 
-  function getVisibleIndices(): number[] {
-    const indices: number[] = [];
+  function getVisibleIndices() {
+    const indices = [];
     galleryItems.forEach((item, i) => {
-      if ((item as HTMLElement).style.display !== 'none') indices.push(i);
+      if (item.style.display !== 'none') indices.push(i);
     });
     return indices;
   }
 
-  function showLightbox(index: number) {
+  function showLightbox(index) {
     visibleIndices = getVisibleIndices();
     currentIndex = index;
     updateLightbox();
@@ -288,11 +281,11 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
 
     // Reset slider to 50%
     if (lbSlider) {
-      const range = lbSlider.querySelector('.slider-range') as HTMLInputElement;
-      const after = lbSlider.querySelector('.slider-after') as HTMLElement;
-      const line = lbSlider.querySelector('.slider-line') as HTMLElement;
+      const range = lbSlider.querySelector('.slider-range');
+      const after = lbSlider.querySelector('.slider-after');
+      const line = lbSlider.querySelector('.slider-line');
       if (range) range.value = '50';
-      if (after) after.style.clipPath = 'inset(0 50% 0 0)';
+      if (after) after.style.clipPath = 'inset(0 0 0 50%)';
       if (line) line.style.left = '50%';
     }
   }
@@ -303,7 +296,7 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
     document.body.classList.remove('overflow-hidden');
   }
 
-  function navigate(direction: number) {
+  function navigate(direction) {
     const pos = visibleIndices.indexOf(currentIndex);
     const next = pos + direction;
     if (next >= 0 && next < visibleIndices.length) {
@@ -315,8 +308,8 @@ import { galleryItems, categories, categoryLabels } from '../data/gallery';
   // Open lightbox on card click (not on slider input)
   document.querySelectorAll('[data-index]').forEach(card => {
     card.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).classList.contains('slider-range')) return;
-      const index = Number((card as HTMLElement).dataset.index);
+      if (e.target.classList.contains('slider-range')) return;
+      const index = Number(card.dataset.index);
       showLightbox(index);
     });
   });

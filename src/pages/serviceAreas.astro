@@ -201,7 +201,7 @@ const breadcrumbSchema = {
           return (
             <div class={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}>
               <!-- Image Side -->
-              <div class="w-full lg:w-5/12 flex-shrink-0 fade-slide">
+              <div class="w-full lg:w-5/12 shadow-inner flex-shrink-0 fade-slide border-b-brown ">
                 {county.image ? (
                   <img src={county.image} alt={county.name} class="w-full h-full object-cover rounded-lg aspect-[4/3]" />
                 ) : (
