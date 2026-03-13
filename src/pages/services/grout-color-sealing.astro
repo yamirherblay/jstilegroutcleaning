@@ -1,0 +1,6 @@
+---
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import { getServiceBySlug } from '../../data/services';
+const service = getServiceBySlug('grout-color-sealing')!;
+---
+<ServiceDetail service={service} />

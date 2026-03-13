@@ -147,7 +147,7 @@ export const counties: County[] = [
       'Expanding north to St. Lucie County. Residents of Port St. Lucie can count on our professional tile and grout services with scheduled appointments and guaranteed satisfaction.',
     responseTime: '60-90 min',
     responseLabel: 'By Appointment',
-      keywords: ['tile cleaning port st lucie', 'grout cleaning port st lucie', 'sealing port st lucie', 'stripping port st lucie'],
+      keywords: ['tile cleaning port st lucie', 'grout cleaning port st lucie', 'sealing port st lucie', 'stripping port st lucie', 'near me tile cleaning port st lucie', 'near me grout cleaning port st lucie', 'near me sealing port st lucie', 'near me stripping port st lucie'],
     cities: [{ name: 'Port St. Lucie', slug: 'port-st-lucie' }],
     testimonials: [
       {

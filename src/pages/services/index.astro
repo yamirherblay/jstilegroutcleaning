@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import Footer from '../../components/Footer.astro';
+import { services } from '../../data/services';
+---
+
+
+<Layout title="Our Services | JS Tile & Grout" description="Professional tile and grout cleaning, marble restoration, sealing, and shower repair services in Miami Dade, West Palm Beach, Brodward, St.Lucie. Call (561) 913-8786." canonical="https://jstilegroutcleaning.com/services">
+  <Header />
+  <PageHero
+    badge="Professional Services"
+    heading="Our Tile & Grout Cleaning Services"
+    subtitle='Expert restoration for residential and commercial properties. <span class="text-blue-accent font-semibold">Se habla Español</span>'
+    image="/images/Services/Services.png"
+  />
+
+  <!-- Services Content -->
+  <section class="bg-blue-50 py-12 md:py-16 fade-in">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-brown font-bold uppercase tracking-widest text-sm mb-2">What We Offer</p>
+        <h2 class="font-heading text-2xl md:text-3xl font-bold italic text-gray-900 mb-4">Complete Tile & Grout Solutions</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          From deep cleaning to restoration and repairs, we provide comprehensive services
+          to keep your tile surfaces looking pristine for years to come.
+        </p>
+        <div class="w-16 h-1 bg-brown mx-auto mt-4"></div>
+      </div>
+
+      <!-- Alternating Service Sections -->
+      <div class="space-y-16 md:space-y-20 fade-in">
+        {services.map((service, index) => (
+          <div id={service.id} class="scroll-mt-24">
+            <div class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}>
+
+              {/* Image/Icon Placeholder */}
+              <div class="w-full lg:w-5/12 flex-shrink-0">
+                <div class={`${service.iconBg} rounded-lg aspect-[4/3] flex items-center justify-center`}>
+                  <img src={service.image} alt={service.title} />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div class="w-full lg:w-7/12 fade-in">
+                <a href={`/services/${service.id}`}>
+                  <h3 class="font-heading text-2xl md:text-3xl font-bold italic text-brown mb-4 hover:text-orange transition-colors">{service.title}</h3>
+                </a>
+                <p class="text-gray-600 leading-relaxed mb-6">{service.details}</p>
+
+                {/* Features */}
+                <ul class="space-y-3 mb-8">
+                  {service.features.map((feature) => (
+                    <li class="flex items-start gap-3">
+                      <svg class="w-5 h-5 text-blue-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span class="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTAs */}
+                <div class="flex flex-wrap gap-4">
+                  <a
+                    href="/contact"
+                    class="inline-block rounded-2xl bg-orange text-white px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-orange-dark transition-colors"
+                  >
+                    Request Estimate
+                  </a>
+                  <a
+                    href={`/services/${service.id}`}
+                    class="inline-block rounded-2xl border-2 border-brown text-brown px-8 py-3 font-bold uppercase tracking-wider text-sm hover:bg-brown hover:text-white transition-colors"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+  <Footer />
+</Layout>

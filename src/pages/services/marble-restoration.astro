@@ -1,0 +1,6 @@
+---
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import { getServiceBySlug } from '../../data/services';
+const service = getServiceBySlug('marble-restoration')!;
+---
+<ServiceDetail service={service} />

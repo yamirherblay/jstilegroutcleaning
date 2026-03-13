@@ -33,9 +33,40 @@ const {
 		<link rel="icon" href="/images/Logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<meta name="author" content={author} />
+		<meta name="copyright" content={copyright} />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={ogTitle} />
+		<meta name="twitter:description" content={ogDescription} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- JSON-LD: Organization -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "JS Tile & Grout Cleaning Services",
+			"telephone": "+1-561-913-8786",
+			"url": "https://jstilegroutcleaning.com",
+			"image": "https://jstilegroutcleaning.com/images/Logo.png",
+			"priceRange": "$$",
+			"areaServed": ["Palm Beach County", "Broward County", "Miami-Dade County", "St. Lucie County"]
+		})} />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Inter+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
 		<title>{title}</title>
 		<slot name="head" />
 	</head>
