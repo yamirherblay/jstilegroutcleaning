@@ -11,7 +11,7 @@ export interface Service {
   details: string;
   extensedDetails: ContentBlock[];
   iconBg: string;
-  icon: 'tile' | 'marble' | 'seal' | 'shower';
+  icon: 'tile' | 'marble' | 'seal' | 'shower' | 'kitchen';
   features: string[];
   image?: string;
   metaTitle: string;
@@ -25,9 +25,9 @@ export function getServiceBySlug(slug: string): Service | undefined {
 export const services: Service[] = [
   {
     id: 'tile-grout-cleaning',
-    title: 'Tile & Grout Cleaning',
+    title: 'Tile & Grout Cleaning and Regrouting',
     description: 'Deep extraction cleaning for all types of tile surfaces, restoring the original look of your grout lines.',
-    details: 'Our professional tile and grout cleaning service uses state-of-the-art equipment and eco-friendly solutions to penetrate deep into your grout lines. We remove years of built-up dirt, grime, and bacteria that regular mopping simply cannot reach. Whether you have ceramic, porcelain, or natural stone tiles, our specialized techniques restore the original beauty of your floors, walls, and countertops without causing any damage to the surface.',
+    details: 'Our professional tile and grout cleaning and regrouting service uses state-of-the-art equipment and eco-friendly solutions to penetrate deep into your grout lines. We remove years of built-up dirt, grime, and bacteria that regular mopping simply cannot reach. Whether you have ceramic, porcelain, or natural stone tiles, our specialized techniques restore the original beauty of your floors, walls, and countertops without causing any damage to the surface.',
     extensedDetails: [
       {
         type: 'paragraph',
@@ -49,6 +49,16 @@ export const services: Service[] = [
           'Over time, embedded dirt causes the lines to darken permanently, giving the floor a neglected appearance that even the most intense scrubbing cannot reverse.',
         ],
       },
+        {
+            type:'heading',
+            text: 'Can Damaged Grout Be Replaced?',
+        },
+        {
+            type: 'paragraph',
+            text:'If grout is severely stained, cracked, or deteriorated, cleaning alone may not be enough to restore its appearance or functionality. In these cases, a process called regrouting can be performed. Regrouting involves removing the damaged grout between tiles and replacing it with fresh grout to restore the strength and appearance of the tiled surface.\n' +
+                '\n' +
+                'This service is especially common in showers, bathrooms, and high-moisture areas where grout tends to deteriorate faster. By replacing old grout with new material, the tile surface becomes cleaner, more uniform, and better protected against moisture and mold growth. Regrouting is often a cost-effective alternative to replacing the entire tile installation.'
+        },
       {
         type: 'heading',
         text: 'The Professional Solution',
@@ -57,6 +67,7 @@ export const services: Service[] = [
         type: 'paragraph',
         text: 'Professional tile and grout cleaning uses specialized equipment and advanced techniques to restore your floors to their original appearance:',
       },
+
       {
         type: 'numbered-list',
         items: [
@@ -99,7 +110,7 @@ export const services: Service[] = [
       'Mold and mildew elimination',
       'Safe for all tile types',
     ],
-    image: '/images/Services/tile-grout-cleaning.png',
+    image: '/images/services/tile-grout-cleaning.png',
     metaTitle: 'Tile & Grout Cleaning South Florida | JS Tile & Grout',
     metaDescription: 'Professional deep tile and grout cleaning in Miami Dade, Brodward, West Palm Beach and St. Lucie. Steam cleaning for ceramic, porcelain, and natural stone surfaces. Call (561) 913-8786 for a free estimate.',
   },
@@ -184,7 +195,7 @@ export const services: Service[] = [
       'Crack and chip repair',
       'Protective sealing application',
     ],
-    image: '/images/Services/Marble.png',
+    image: '/images/services/marble.png',
     metaTitle: 'Marble Restoration & Polishing South Florida | JS Tile & Grout',
     metaDescription: 'Expert marble polishing, honing, and sealing in Miami Dade, Brodward, West Palm Beach and St. Lucie. Restore your marble, travertine, and limestone surfaces. Call (561) 913-8786.',
   },
@@ -314,7 +325,7 @@ export const services: Service[] = [
       'Stain and moisture protection',
       'Extended floor lifespan',
     ],
-    image: '/images/Services/sealing-stripping.png',
+    image: '/images/services/sealing-stripping.png',
     metaTitle: 'Tile Sealing & Stripping Services South Florida | JS Tile & Grout',
     metaDescription: 'Professional sealant and wax removal with commercial-grade resealing in Miami Dade, Brodward, West Palm Beach and St. Lucie. Protect your tile floors. Call (561) 913-8786.',
   },
@@ -391,10 +402,87 @@ export const services: Service[] = [
       'Water damage prevention',
       'Mold and mildew remediation',
     ],
-    image: '/images/Services/Bath.png',
+    image:'/images/services/bath.png',
     metaTitle: 'Shower Regrouting & Repair South Florida | JS Tile & Grout',
     metaDescription: 'Expert shower regrouting, recaulking, and tile repair in Miami Dade, Brodward, West Palm Beach and St. Lucie. Prevent water damage and mold. Call (561) 913-8786.',
   },
+    {
+        id: 'kitchen-recaulking',
+        title: 'Kitchen Recaulking',
+        description: 'Professional kitchen recaulking for sinks, countertops, and backsplashes to prevent water damage, leaks, and mold buildup.',
+        details: 'Old or deteriorated caulk in your kitchen can allow water to seep into small gaps around sinks, countertops, and backsplashes. Over time, this moisture can lead to mold growth, unpleasant odors, and damage to cabinets or surrounding surfaces. Our professional kitchen recaulking service removes damaged caulk and replaces it with high-quality waterproof sealant to restore a clean, durable barrier that protects your kitchen and improves its appearance.',
+        extensedDetails: [
+            {
+                type: 'paragraph',
+                text: 'Caulking plays an essential role in protecting your kitchen from moisture damage. Areas around sinks, countertops, and backsplashes are constantly exposed to water, grease, and daily cleaning. Over time, the original caulk can crack, shrink, discolor, or separate from the surface, allowing moisture to penetrate areas that should remain sealed.',
+            },
+            {
+                type: 'heading',
+                text: 'Why Is Kitchen Recaulking Important?',
+            },
+            {
+                type: 'paragraph',
+                text: 'When caulk begins to deteriorate, small gaps can form that allow water and food particles to accumulate, potentially causing several problems:',
+            },
+            {
+                type: 'list',
+                items: [
+                    'Moisture damage to cabinets and countertops.',
+                    'Mold and mildew growth in hidden areas.',
+                    'Water leaks around sinks and fixtures.',
+                    'Unsightly, stained, or cracked caulk lines.',
+                ],
+            },
+            {
+                type: 'heading',
+                text: 'Our Recaulking Process',
+            },
+            {
+                type: 'numbered-list',
+                items: [
+                    {
+                        title: 'Inspection',
+                        description: 'We evaluate the condition of existing caulk around sinks, countertops, and backsplashes to identify areas where the seal has deteriorated.',
+                    },
+                    {
+                        title: 'Caulk Removal',
+                        description: 'Old, cracked, or moldy caulk is carefully removed to prepare the surface for a fresh, long-lasting seal.',
+                    },
+                    {
+                        title: 'Surface Preparation',
+                        description: 'The area is thoroughly cleaned and dried to ensure proper adhesion of the new sealant.',
+                    },
+                    {
+                        title: 'Professional Recaulking',
+                        description: 'We apply high-quality waterproof silicone caulk designed for kitchen environments, creating a smooth, durable seal that prevents leaks and moisture intrusion.',
+                    },
+                ],
+            },
+            {
+                type: 'heading',
+                text: 'The Result',
+            },
+            {
+                type: 'paragraph',
+                text: 'The result is a clean, neat, and waterproof seal that protects your kitchen surfaces from moisture damage while improving the overall appearance of your sink, countertops, and backsplash.',
+            },
+            {
+                type: 'paragraph',
+                text: 'Professional kitchen recaulking is a simple but highly effective way to maintain the hygiene and durability of your kitchen while preventing costly repairs caused by water infiltration.',
+            },
+        ],
+        iconBg: 'bg-brown',
+        icon: 'kitchen',
+        features: [
+            'Professional kitchen recaulking',
+            'Sink and countertop sealing',
+            'Water leak prevention',
+            'Mold and mildew prevention',
+        ],
+        image:'/images/services/kitchen-recaulking.jpg',
+        metaTitle: 'Kitchen Recaulking Services South Florida | JS Tile & Grout Cleaning',
+        metaDescription: 'Professional kitchen recaulking for sinks, countertops, and backsplashes in Miami Dade, Broward, West Palm Beach, and St. Lucie. Prevent leaks, mold, and water damage. Call (561) 913-8786.',
+    },
   {
     id: 'grout-color-sealing',
     title: 'Grout Color Sealing',
@@ -468,7 +556,7 @@ export const services: Service[] = [
       'Stain, mold, and mildew resistance',
       'Easy-to-clean, low-maintenance finish',
     ],
-    image: 'images/Services/grout-color-sealing.webp',
+    image:'/images/services/grout-color-sealing.png',
     metaTitle: 'Grout Color Sealing Services South Florida | JS Tile & Grout',
     metaDescription: 'Permanently recolor and seal your grout lines in South Florida. Waterproof barrier against stains, mold, and discoloration. Call (561) 913-8786.',
   },
