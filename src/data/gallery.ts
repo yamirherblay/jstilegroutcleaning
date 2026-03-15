@@ -120,7 +120,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: '11',
-    title: 'Tiles Color Sealing - Bedroom',
+    title: 'Tiles Color Sealing - Bedroom - West Palm Beach, FL',
     category: 'sealing',
     beforeThumb: '/images/gallery/tiles-color-sealing-in-bedroom-before.jpg',
     afterThumb: '/images/gallery/tiles-color-sealing-in-bedroom-after.jpg',
