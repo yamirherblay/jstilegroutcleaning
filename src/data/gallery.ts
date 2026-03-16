@@ -183,9 +183,9 @@ export const galleryItems: GalleryItem[] = [
     id: '18',
     title: 'Tile and Grout Restoration with Regrouting and Color Sealing – Luxury Waterfront Home – Miami Beach, FL',
     category: 'tile',
-    beforeThumb: '/images/gallery/tile-entry-house-luxury-before.png',
+    beforeThumb: '/images/gallery/tile-entry-house-luxury-before.jpg',
     afterThumb: '/images/gallery/tile-entry-house-luxury-after.jpg',
-    beforeFull: '/images/gallery/tile-entry-house-luxury-before.png',
+    beforeFull: '/images/gallery/tile-entry-house-luxury-before.jpg',
     afterFull: '/images/gallery/tile-entry-house-luxury-after.jpg',
   },
 ];

@@ -56,7 +56,13 @@
     const elements = document.querySelectorAll(animatedSelectors.join(', '));
 
     elements.forEach(el => {
-      observer.observe(el);
+      // If element is already in viewport, make it visible immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
     });
   }
 
