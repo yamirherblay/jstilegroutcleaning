@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro';
 import { galleryItems as galleryData, categories, categoryLabels } from '../data/gallery';
 ---
 <Layout
-  title="Tile & Grout Cleaning Gallery | Before & After Photos | Miami-Dade & South Florida"
+  title="Tile & Grout Cleaning Gallery | Before & After Photos | South Florida"
   description="See the results of our professional tile and grout cleaning. Browse before and after photos of tile restoration, grout cleaning, and marble polishing in Miami, Palm Beach, Broward, and other cities in South Florida.."
   canonical="https://jstilegroutcleaning.com/gallery"
 >
@@ -23,6 +23,7 @@ import { galleryItems as galleryData, categories, categoryLabels } from '../data
         "@type": "LocalBusiness",
         "name": "JS Tile & Grout Cleaning Services",
         "telephone": "+1-561-913-8786"
+
       }
     })} />
   </Fragment>
@@ -36,7 +37,7 @@ import { galleryItems as galleryData, categories, categoryLabels } from '../data
   />
 
   <!-- Filters + Gallery -->
-  <section class="bg-blue-50 py-12 md:py-16 fade-in">
+  <section class="bg-blue-50 py-12 md:py-16">
     <div class="max-w-6xl mx-auto px-4">
       <!-- Section Header -->
       <div class="text-center mb-10 md:mb-14">
@@ -64,7 +65,7 @@ import { galleryItems as galleryData, categories, categoryLabels } from '../data
       </div>
 
       <!-- Gallery Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in" id="gallery-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
         {galleryData.map((item, index) => (
           <div class="gallery-item" data-category={item.category}>
             <div class="group cursor-pointer" data-index={index}>
