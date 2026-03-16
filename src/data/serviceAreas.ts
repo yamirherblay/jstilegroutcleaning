@@ -35,7 +35,7 @@ export const counties: County[] = [
   {
     id: 'palm-beach',
     name: 'Palm Beach County',
-      image:'/images/areaweserve/palm-beach-county.jpg',
+      image:'/images/areaweserve/palm-beach-county.webp',
     description:
       'Our home base. We provide the fastest response times across Palm Beach County, from Jupiter in the north to Boca Raton in the south, including Wellington, Delray Beach, Boynton Beach, West Palm Beach, and Lake Worth Beach.',
     responseTime: '30-45 min',
@@ -108,7 +108,7 @@ export const counties: County[] = [
   {
     id: 'miami-dade',
     name: 'Miami-Dade County',
-      image:'/images/areaweserve/miami-dade-county-houses.jpg',
+      image:'/images/areaweserve/miami-dade-county-houses.webp',
     description:
       'Extending our expert services to Miami-Dade County. We serve Miami, Doral, Hialeah, and Miami Beach with the same quality and attention to detail our customers expect.',
     responseTime: '60-90 min',
@@ -142,7 +142,7 @@ export const counties: County[] = [
   {
     id: 'st-lucie',
     name: 'St. Lucie County',
-      image:'/images/areaweserve/st-lucie-county.jpg',
+      image:'/images/areaweserve/st-lucie-county.webp',
     description:
       'Expanding north to St. Lucie County. Residents of Port St. Lucie can count on our professional tile and grout services with scheduled appointments and guaranteed satisfaction.',
     responseTime: '60-90 min',
