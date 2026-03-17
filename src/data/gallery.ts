@@ -24,7 +24,7 @@ export const categoryLabels: Record<GalleryItem['category'], string> = {
   marble: 'Marble Restoration',
   shower: 'Shower Repair',
     sealing: 'Grout Sealing Color',
-    recaulking: 'Kitchen Recaulking',
+    recaulking: 'Recaulking',
 };
 
 export const galleryItems: GalleryItem[] = [
@@ -165,8 +165,8 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: '16',
-    title: 'Kitchen Tile & Color Sealing - Miami, FL',
-    category: 'recaulking',
+    title: 'Kitchen Tile cleaning & Color Sealing - West Palm Beach, FL',
+    category: 'tile',
     beforeThumb: '/images/gallery/kitchen-tile-and-color-sealing-before.webp',
     afterThumb: '/images/gallery/kitchen-tile-and-color-sealing-after.webp',
     beforeFull: '/images/gallery/kitchen-tile-and-color-sealing-before.webp',

@@ -408,21 +408,21 @@ export const services: Service[] = [
   },
     {
         id: 'kitchen-recaulking',
-        title: 'Kitchen Recaulking',
-        description: 'Professional kitchen recaulking for sinks, countertops, and backsplashes to prevent water damage, leaks, and mold buildup.',
-        details: 'Old or deteriorated caulk in your kitchen can allow water to seep into small gaps around sinks, countertops, and backsplashes. Over time, this moisture can lead to mold growth, unpleasant odors, and damage to cabinets or surrounding surfaces. Our professional kitchen recaulking service removes damaged caulk and replaces it with high-quality waterproof sealant to restore a clean, durable barrier that protects your kitchen and improves its appearance.',
+        title: 'Kitchen, Bathroom and Baseboard Recaulking',
+        description: 'Professional kitchen, bath and baseboard recaulking for sinks, countertops, and backsplashes to prevent water damage, leaks, and mold buildup.',
+        details: 'Old or deteriorated caulk in your kitchen, bath or baseboard, can allow water to seep into small gaps around sinks, countertops, and backsplashes. Over time, this moisture can lead to mold growth, unpleasant odors, and damage to cabinets or surrounding surfaces. Our professional kitchen recaulking service removes damaged caulk and replaces it with high-quality waterproof sealant to restore a clean, durable barrier that protects your kitchen and improves its appearance.',
         extensedDetails: [
             {
                 type: 'paragraph',
-                text: 'Caulking plays an essential role in protecting your kitchen from moisture damage. Areas around sinks, countertops, and backsplashes are constantly exposed to water, grease, and daily cleaning. Over time, the original caulk can crack, shrink, discolor, or separate from the surface, allowing moisture to penetrate areas that should remain sealed.',
+                text: 'Caulking plays an essential role in protecting your bathroom, kitchen and baseboard from moisture damage. Areas around sinks, countertops, and backsplashes are constantly exposed to water, grease, and daily cleaning. Over time, the original caulk can crack, shrink, discolor, or separate from the surface, allowing moisture to penetrate areas that should remain sealed.',
             },
             {
                 type: 'heading',
-                text: 'Why Is Kitchen Recaulking Important?',
+                text: 'Why Is Recaulking Important?',
             },
             {
                 type: 'paragraph',
-                text: 'When caulk begins to deteriorate, small gaps can form that allow water and food particles to accumulate, potentially causing several problems:',
+                text: 'When caulk begins to deteriorate, small gaps can form that allow water and any particles to accumulate, potentially causing several problems:',
             },
             {
                 type: 'list',
@@ -464,24 +464,24 @@ export const services: Service[] = [
             },
             {
                 type: 'paragraph',
-                text: 'The result is a clean, neat, and waterproof seal that protects your kitchen surfaces from moisture damage while improving the overall appearance of your sink, countertops, and backsplash.',
+                text: 'The result is a clean, neat, and waterproof seal that protects your kitchen, bathroom and the baseboard surfaces from moisture damage while improving the overall appearance of your sink, countertops, and backsplash.',
             },
             {
                 type: 'paragraph',
-                text: 'Professional kitchen recaulking is a simple but highly effective way to maintain the hygiene and durability of your kitchen while preventing costly repairs caused by water infiltration.',
+                text: 'Professional kitchen, bathroom and baseboard recaulking is a simple but highly effective way to maintain the hygiene and durability of your bathroom, kitchen and baseboard, while preventing costly repairs caused by water infiltration.',
             },
         ],
         iconBg: 'bg-brown',
         icon: 'kitchen',
         features: [
-            'Professional kitchen recaulking',
+            'Professional kitchen, bathroom and baseboard recaulking',
             'Sink and countertop sealing',
             'Water leak prevention',
             'Mold and mildew prevention',
         ],
         image:'/images/services/kitchen-recaulking.webp',
-        metaTitle: 'Kitchen Recaulking Services South Florida | JS Tile & Grout Cleaning',
-        metaDescription: 'Professional kitchen recaulking for sinks, countertops, and backsplashes in Miami Dade, Broward, West Palm Beach, and St. Lucie. Prevent leaks, mold, and water damage. Call (561) 913-8786.',
+        metaTitle: 'Kitchen,Bathroom and Baseboard Recaulking Services South Florida | JS Tile & Grout Cleaning',
+        metaDescription: 'Professional kitchen, bathroom and baseboard recaulking for sinks, countertops, and backsplashes in Miami Dade, Broward, West Palm Beach, and St. Lucie. Prevent leaks, mold, and water damage. Call (561) 913-8786.',
     },
   {
     id: 'grout-color-sealing',
