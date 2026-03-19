@@ -72,8 +72,10 @@ export const services: Service[] = [
         type: 'numbered-list',
         items: [
           {
-            title: 'Deep Cleaning with Pressure Washing and Steam',
-            description: 'Hot water is applied at high pressure combined with eco-friendly but powerful cleaning solutions. This penetrates the pores of the grout, dissolving and expelling years of accumulated dirt.',
+            title: 'Deep-cleaning technology',
+            description: 'Our system is based on precision chemistry and forced extraction.\n' +
+                'We don’t limit ourselves to a single product. We have an arsenal of professional cleaners:\n' +
+                'acids of varying strengths, powerful strippers, and other specialized chemicals. We select the perfect blend based on the type of floor and the stain we’re tackling.',
           },
           {
             title: 'Vacuum Extraction',

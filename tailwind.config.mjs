@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        orange: '#C47114',
+        orange: '#ff9004',
         'orange-dark': '#A65E10',
-        brown: '#690E11',
-        'brown-dark': '#4F0B0D',
+        brown: '#950328',
+        'brown-dark': '#950321',
         'blue-accent': '#0D80A1',
         'blue-light': '#1A9EC4',
         'blue-bg': '#E6F5F9',
