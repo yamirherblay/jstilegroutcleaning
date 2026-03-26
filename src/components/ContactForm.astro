@@ -168,35 +168,45 @@ import { socialLinks } from "../data/SocialLinks.ts";
       </div>
 
     </div>
-  </div>
+
 </section>
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
-  form?.addEventListener('submit', (e) => {
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+  const statusDiv = document.createElement('div');
+  statusDiv.id = 'form-status';
+  statusDiv.className = 'mt-4 text-center font-semibold';
+  form?.appendChild(statusDiv);
+
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = (document.getElementById('full-name') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const phone = (document.getElementById('phone') as HTMLInputElement).value;
-    const service = (document.getElementById('service') as HTMLSelectElement).value;
-    const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    statusDiv.textContent = '';
+    statusDiv.className = 'mt-4 text-center font-semibold text-blue-600';
 
-    const subject = `New Estimate Request - ${name}`;
-    const body = `NEW ESTIMATE REQUEST
-====================
+    try {
+      const formData = new FormData(form);
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Service: ${service}
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
 
-Message:
-${message || 'N/A'}
-
---
-Sent from JS Tile & Grout website`;
-
-    window.location.href = `mailto:jstilegroutcleaning@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (response.ok) {
+        statusDiv.textContent = '✓ Message sent successfully! We will contact you soon.';
+        statusDiv.className = 'mt-4 text-center font-semibold text-green-600';
+        form.reset();
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (error) {
+      statusDiv.textContent = '✗ Error sending message. Please try again, text or call us directly.';
+      statusDiv.className = 'mt-4 text-center font-semibold text-red-600';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Request for a Free Estimate';
+    }
   });
 </script>

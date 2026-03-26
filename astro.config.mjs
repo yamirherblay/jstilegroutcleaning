@@ -1,10 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import cloudflare from '@astrojs/cloudflare';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://jstilegroutcleaning.com',
-  integrations: [tailwind()],
+  output: 'server',
+    adapter: cloudflare(),
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
-

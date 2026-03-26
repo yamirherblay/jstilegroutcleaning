@@ -6,7 +6,7 @@ export interface SocialLinks {
 }
 export const socialLinks : SocialLinks = {
     Facebook: 'https://www.facebook.com/profile.php?id=61576322027795&sk',
-    Instagram: 'https://www.instagram.com/jstileandgrout/',
+    Instagram: 'https://www.instagram.com/jstilegroutcleaning',
     Twitter: '',
-    TikTok: 'https://www.tiktok.com/@jstileandgrout'
+    TikTok: 'https://www.tiktok.com/@jstileygroutcleanig'
 };

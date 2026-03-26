@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-orange: #ff9004;
+  --color-orange-dark: #a65e10;
+  --color-brown: #950328;
+  --color-brown-dark: #950321;
+  --color-blue-accent: #0d80a1;
+  --color-blue-light: #1a9ec4;
+  --color-blue-bg: #e6f5f9;
+  --color-blue-100: #e0f2fe;
+
+  --font-heading: "Inter", serif;
+  --font-body: "Open Sans", sans-serif;
+}

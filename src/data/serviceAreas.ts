@@ -18,7 +18,6 @@ export interface County {
     keywords?: string[];
     mainService?: string[];
   responseTime: string;
-  responseLabel: string;
   cities: City[];
   testimonials: Testimonial[];
   accentColor: 'brown' | 'orange' | 'blue-accent' | 'brown-dark';
@@ -40,7 +39,6 @@ export const counties: County[] = [
       'Our home base. We provide the fastest response times across Palm Beach County, from Jupiter in the north to Boca Raton in the south, including Wellington, Delray Beach, Boynton Beach, West Palm Beach, and Lake Worth Beach.',
     responseTime: '30-45 min',
       keywords: ['tile cleaning palm beach county', 'grout cleaning palm beach county', 'sealing palm beach county', 'stripping palm beach county', 'near me tile cleaning palm beach county', 'near me grout cleaning palm beach county', 'near me sealing palm beach county', 'near me stripping palm beach county'],
-    responseLabel: 'Fastest Response',
     cities: [
       { name: 'Jupiter', slug: 'jupiter' },
       { name: 'Boca Raton', slug: 'boca-raton' },
@@ -77,7 +75,6 @@ export const counties: County[] = [
     description:
       'Serving the heart of South Florida. Our Broward County coverage includes Fort Lauderdale, Miramar, Hollywood, Coral Springs, and Pembroke Pines with reliable same-day scheduling.',
     responseTime: '45-60 min',
-    responseLabel: 'Same-Day Service',
     cities: [
       { name: 'Fort Lauderdale', slug: 'fort-lauderdale' },
       { name: 'Miramar', slug: 'miramar' },
@@ -110,9 +107,8 @@ export const counties: County[] = [
     name: 'Miami-Dade County',
       image:'/images/areaweserve/miami-dade-county-houses.webp',
     description:
-      'Extending our expert services to Miami-Dade County. We serve Miami, Doral, Hialeah, and Miami Beach with the same quality and attention to detail our customers expect.',
+    'Your local experts for professional floor care in Miami-Dade County. We specialize in high-quality tile cleaning, grout restoration, and marble polishing for residential and commercial properties. Our team provides reliable, top-rated service across Miami, Doral, Hialeah, and Miami Beach, ensuring your floors regain their original brilliance with every visit.',
     responseTime: '60-90 min',
-    responseLabel: 'Scheduled Service',
     cities: [
       { name: 'Miami', slug: 'miami' },
       { name: 'Doral', slug: 'doral' },
@@ -144,10 +140,9 @@ export const counties: County[] = [
     name: 'St. Lucie County',
       image:'/images/areaweserve/st-lucie-county.webp',
     description:
-      'Expanding north to St. Lucie County. Residents of Port St. Lucie can count on our professional tile and grout services with scheduled appointments and guaranteed satisfaction.',
+        'Your premier choice for professional floor restoration in St. Lucie County. We provide top-rated tile cleaning, grout repair, and stone sealing services specifically tailored for Port St. Lucie residents. Our team is dedicated to delivering flawless results with guarantee, your total satisfaction and a like-new finish for your floors.',
     responseTime: '60-90 min',
-    responseLabel: 'By Appointment',
-      keywords: ['tile cleaning port st lucie', 'grout cleaning port st lucie', 'sealing port st lucie', 'stripping port st lucie', 'near me tile cleaning port st lucie', 'near me grout cleaning port st lucie', 'near me sealing port st lucie', 'near me stripping port st lucie'],
+      keywords: ['tile cleaning port st lucie', 'grout cleaning port st lucie', 'sealing port st lucie', 'stripping port st lucie', 'near me tile cleaning port st lucie', 'near me grout cleaning port st lucie', 'near me color sealer port st lucie','near me sealing port st lucie', 'near me stripping port st lucie'],
     cities: [{ name: 'Port St. Lucie', slug: 'port-st-lucie' }],
     testimonials: [
       {
